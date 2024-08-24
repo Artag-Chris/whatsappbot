@@ -7,10 +7,10 @@ app.use(express.json());
 const { WEBHOOK_VERIFY_TOKEN, GRAPH_API_TOKEN, PORT } = process.env;
 
 app.post("/webhook", async (req: Request, res: Response) => {
-  // log incoming messages
+  // log de nuevos mensajes
   console.log("Incoming webhook message:", JSON.stringify(req.body, null, 2));
 
-  // check if the webhook request contains a message
+  // mira si en el webhook hay una notificacion de mensaje
   // details on WhatsApp text message payload: https://developers.facebook.com/docs/whatsapp/cloud-api/webhooks/payload-examples#text-messages
   const message = req.body.entry?.[0]?.changes[0]?.value?.messages?.[0];
 
