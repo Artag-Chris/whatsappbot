@@ -21,6 +21,8 @@ function main(){
     // mira si en el webhook hay una notificacion de mensaje
     // aqui estan los detalles de la documentacion sobre el payload: https://developers.facebook.com/docs/whatsapp/cloud-api/webhooks/payload-examples#text-messages
     const message = req.body.entry?.[0]?.changes[0]?.value?.messages?.[0];
+
+    //TODO: hacer una funcion que mire si esta en horario de trabajo  y enviar un reply con los horarios
   
     // mira si es un mensaje de texto
     if (message?.type === "text") {
