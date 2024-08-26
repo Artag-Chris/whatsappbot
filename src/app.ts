@@ -1,8 +1,7 @@
 import express,{ Request, Response } from "express";
 import { envs } from "./config/envs/envs";
 import axios from "axios";
-
-
+import { inWorkingHours } from "./functions/isWorkingHours";
 
 
 (async () => {
@@ -22,15 +21,19 @@ function main(){
     // aqui estan los detalles de la documentacion sobre el payload: https://developers.facebook.com/docs/whatsapp/cloud-api/webhooks/payload-examples#text-messages
     const message = req.body.entry?.[0]?.changes[0]?.value?.messages?.[0];
 
-    //TODO: hacer una funcion que mire si esta en horario de trabajo  y enviar un reply con los horarios
-  
-    // mira si es un mensaje de texto
+    
+    //sino fue atendido guardar en la base de datos que no fue atendido para que lo tomen los agentes
+  if(!inWorkingHours()){
+    
     if (message?.type === "text") {
       // saca el numero de ""business number" para mandar un reply
       const business_phone_number_id =
         req.body.entry?.[0].changes?.[0].value?.metadata?.phone_number_id;
-  
+
       // aqui esta la documentacion con las posibles respuestas https://developers.facebook.com/docs/whatsapp/cloud-api/reference/messages
+      //TODO crear una funcion que busque de la respuesta con las keywords  y segun el resultado mande un reply
+      // TODO: despues de crear la funcion se debe pasar a un agente en especifico mediante websocket hay que investigar
+
       await axios({
         method: "POST",
         url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
@@ -60,9 +63,15 @@ function main(){
           message_id: message.id,
         },
       });
+    }else{
+      //aqui se guardara el mensaje que no fue atendido en la base de datos para que despues los agentes lo lean
+      console.log("no fue atendido")
     }
   
     res.sendStatus(200);
+  }
+    // mira si es un mensaje de texto
+    
   });
   
   // solo acepta requests de /webhook endpoint.
