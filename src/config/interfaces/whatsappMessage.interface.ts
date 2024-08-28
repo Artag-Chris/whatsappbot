@@ -17,7 +17,7 @@ interface Change {
 interface Value {
     messaging_product: string;
     metadata:          Metadata;
-    statuses:          Status[];
+    messages:          Messages[];
 }
 
 interface Metadata {
@@ -25,16 +25,16 @@ interface Metadata {
     phone_number_id:      string;
 }
 
-interface Status {
+interface Messages {
     id:           string;
-    status:       string;
+    type:       string;
     timestamp:    string;
-    recipient_id: string;
+    from: string;
     conversation: Conversation;
     pricing:      Pricing;
 }
 
-export interface Conversation {
+interface Conversation {
     id:     string;
     origin: Origin;
 }

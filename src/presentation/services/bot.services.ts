@@ -9,26 +9,32 @@ constructor() {
 }
 
 onMessage(payload:IncommingWhatsappMessage ) :string{
-  let mensaje: string = "hola mundo";
+let mensaje="hola mundo";
 
-  const message =payload.entry?.[0].changes?.[0].value
+  const telefonoAEnviar=payload.entry?.[0].changes?.[0].value?.messages?.[0].from;
   const business_phone_number_id =payload.entry?.[0].changes?.[0].value?.metadata?.phone_number_id;
 
   async function sendMessage() {
-    const numero = message;
-    console.log(numero);
-//    await axios({
-//      method: "POST",
-//      url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
-//     headers: {
-//        Authorization: `Bearer ${envs.GRAPH_API_TOKEN}`,
-//      },
-//      data: {
-//       messaging_product: "whatsapp",
-//       to: message?.status,
-//       text: {body: 'hola mundo'},
-//      },
-//    })
+
+    try {
+        await axios({
+            method: "POST",
+            url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+           headers: {
+              Authorization: `Bearer ${envs.GRAPH_API_TOKEN}`,
+            },
+            data: {
+             messaging_product: "whatsapp",
+             to: telefonoAEnviar!,
+             text: {body: 'Mesanje de devuelta'},
+            },
+          })
+    }catch{
+      console.log("error");
+    }
+   
+    //console.log(telefonoAEnviar);
+  
     
   }
   sendMessage();

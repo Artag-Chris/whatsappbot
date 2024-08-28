@@ -1,7 +1,6 @@
 import { Request, Response } from "express";
 import { inWorkingHours } from "../../functions";
-import axios from "axios";
-import { envs } from "../../config/envs/envs";
+
 import { BotServices } from "../services/bot.services";
 export class BotController {
 
@@ -11,20 +10,20 @@ export class BotController {
 
     webhook=async(req: Request, res: Response)=>  {
       const payload = req.body;
-      const headers = req.headers;
+      let checked= payload.entry[0].changes[0].value.messages[0].type ? payload.entry[0].changes[0].value.messages[0].type : "text";
+      //const headers = req.headers;
       //console.log(headers);
-      //console.log(JSON.stringify(payload));
+      
       //TODO: funcion por si es la primera vez que hace contacto
+        //console.log(payload.entry[0].changes[0].value.messages[0].type);
 
-
-      //console.log("Incoming webhook message:", payload.entry?.[0].changes[0].value);
-      const message = req.body.entry?.[0]?.changes[0]?.value?.messages?.[0];
-      const itsFirstMessage =
-        req.body.entry?.[0]?.changes[0]?.value?.messages?.[0].type;
+     
+      //onst message = req.body.entry?.[0]?.changes[0]?.value?.messages?.[0];
+     // const itsFirstMessage =req.body.entry?.[0]?.changes[0]?.value?.messages?.[0].type;
       const whatsappEvent = req.headers;
 
-      
-      switch(message.type){
+      console.log(checked)
+      switch(checked) {
         case "text":
           this.botServices.onMessage(payload);
           //console.log("text");
