@@ -8,7 +8,7 @@ export async function sendMessageToApi(payload: IncomingWhatsappMessage): Promis
   
     try {
       const response = await axios.post(apiUrl, payload);
-      console.log('Payload enviado exitosamente:', response.data);
+      //console.log('Payload enviado exitosamente:', response.data);
       return response;
     } catch (error) {
       console.error('Error al enviar el payload:', error);
