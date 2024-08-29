@@ -46,7 +46,7 @@ export class BotServices {
         switch (menu) {
           case "customerService": 
           //se usara el webhook para enviarlo 
-          console.log("traslado a customerService");
+         // console.log("traslado a customerService");
           const response = await sendMessageToApi(payload);
           if (response) {
             console.log("response", response);
@@ -56,7 +56,7 @@ export class BotServices {
           break;
           case "creditRequest":
             //se usara el webhook para enviarlo 
-          console.log("traslado a  creditRequest");
+          //console.log("traslado a  creditRequest");
           break;
           case "walletArea":
             //se usara el webhook para enviarlo 
@@ -64,11 +64,11 @@ export class BotServices {
           break;
           case "accounting":
             //se usara el webhook para enviarlo 
-          console.log("traslado a accounting");
+          //console.log("traslado a accounting");
           break;
           default:
             //se usara el webhook para enviarlo 
-          console.log("traslado a  customerService");
+          //console.log("traslado a  customerService");
           break;
 
         }
