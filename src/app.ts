@@ -1,7 +1,5 @@
 import express,{ Request, Response } from "express";
 import { envs } from "./config/envs/envs";
-import axios from "axios";
-import { inWorkingHours } from "./functions/isWorkingHours";
 import { BotController } from "./presentation/whatsapp/bot.controller";
 
 

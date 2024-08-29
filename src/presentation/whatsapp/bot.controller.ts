@@ -38,20 +38,18 @@ export class BotController {
         if(!messages){
           return res.status(400).send("mensaje invalido")
         }
-
         const messageType=messages.type;
-        
-        if(!inWorkingHours()){
-          //mandara un un mensaje personalizado al usuario diciendo la hora de atencion y tambien guardara en la base de datos
-          return res.status(400).send("No se puede enviar el mensaje en este horario")
-        }
+
+        // if(!inWorkingHours()){
+        //   //mandara un un mensaje personalizado al usuario diciendo la hora de atencion y tambien guardara en la base de datos
+        //   return res.status(400).send("No se puede enviar el mensaje en este horario")
+        // }
          
         //TODO: funcion por si es la primera vez que hace contacto
        
         switch(messageType) {
           case "text":
             this.botServices.onMessage(payload);
-            //console.log("text");
             break;
           case "image":
             console.log("image");

@@ -1,7 +1,8 @@
 import { IncomingWhatsappMessage } from "../../config/interfaces/whatsappMessage.interface";
 import { envs } from "../../config/envs/envs";
 import axios from "axios";
-import { findMenu } from "../../functions"; ;
+import { findMenu, sendMessageToApi } from "../../functions";
+ ;
 
 export class BotServices {
   constructor() {}
@@ -14,11 +15,12 @@ export class BotServices {
     const cuerpoDelMensaje = payload.entry?.[0].changes?.[0].value?.messages?.[0];
     const bodyMessage = cuerpoDelMensaje?.text?.body;
 
+
     if (!telefonoAEnviar || !businessPhoneNumberId || !idMessage || !bodyMessage) {
       console.error("Missing required data from payload");
       return mensaje;
     }
-   
+   console.log("onMessage", bodyMessage);
     try {
       const headers = {
         Authorization: `Bearer ${envs.GRAPH_API_TOKEN}`,
@@ -40,11 +42,17 @@ export class BotServices {
   
         await axios.post(`https://graph.facebook.com/${envs.Version}/${businessPhoneNumberId}/messages`, messageData, { headers });
         await axios.post(`https://graph.facebook.com/${envs.Version}/${businessPhoneNumberId}/messages`, statusData, { headers });
-
+        
         switch (menu) {
           case "customerService": 
           //se usara el webhook para enviarlo 
           console.log("traslado a customerService");
+          const response = await sendMessageToApi(payload);
+          if (response) {
+            console.log("response", response);
+          } else {
+            console.log("No se recibió una respuesta válida de sendMessageToApi");
+          }
           break;
           case "creditRequest":
             //se usara el webhook para enviarlo 
