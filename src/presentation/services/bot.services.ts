@@ -20,7 +20,7 @@ export class BotServices {
       console.error("Missing required data from payload");
       return mensaje;
     }
-   console.log("onMessage", bodyMessage);
+   
     try {
       const headers = {
         Authorization: `Bearer ${envs.GRAPH_API_TOKEN}`,
