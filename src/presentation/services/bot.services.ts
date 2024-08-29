@@ -1,80 +1,48 @@
-import { IncommingWhatsappMessage } from "../../config/interfaces/whatsappMessage.interface";
+import { IncomingWhatsappMessage } from "../../config/interfaces/whatsappMessage.interface";
 import { envs } from "../../config/envs/envs";
 import axios from "axios";
 
 export class BotServices {
+  constructor() {}
 
-constructor() {
-    
-}
+  async onMessage(payload: IncomingWhatsappMessage): Promise<string> {
+    let mensaje = "hola mundo";
+    const telefonoAEnviar = payload.entry?.[0].changes?.[0].value?.messages?.[0].from;
+    const businessPhoneNumberId = payload.entry?.[0].changes?.[0].value?.metadata?.phone_number_id;
+    const idMessage = payload.entry?.[0].changes?.[0].value?.messages?.[0].id;
+    const cuerpoDelMensaje = payload.entry?.[0].changes?.[0].value?.messages?.[0];
+    const bodyMessage = cuerpoDelMensaje?.text?.body;
 
-onMessage(payload:IncommingWhatsappMessage ) :string{
-let mensaje="hola mundo";
-
-  const telefonoAEnviar=payload.entry?.[0].changes?.[0].value?.messages?.[0].from;
-  const business_phone_number_id =payload.entry?.[0].changes?.[0].value?.metadata?.phone_number_id;
-
-  async function sendMessage() {
-
-    try {
-        await axios({
-            method: "POST",
-            url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
-           headers: {
-              Authorization: `Bearer ${envs.GRAPH_API_TOKEN}`,
-            },
-            data: {
-             messaging_product: "whatsapp",
-             to: telefonoAEnviar!,
-             text: {body: 'Mesanje de devuelta'},
-            },
-          })
-    }catch{
-      console.log("error");
+    if (!telefonoAEnviar || !businessPhoneNumberId || !idMessage || !bodyMessage) {
+      console.error("Missing required data from payload");
+      return mensaje;
     }
    
-    //console.log(telefonoAEnviar);
-  
-    
+    console.log(bodyMessage);
+    try {
+      const headers = {
+        Authorization: `Bearer ${envs.GRAPH_API_TOKEN}`,
+      };
+
+      const messageData = {
+        messaging_product: "whatsapp",
+        to: telefonoAEnviar,
+        text: { body: 'Mensaje de devuelta' },
+      };
+
+      const statusData = {
+        messaging_product: "whatsapp",
+        status: "read",
+        message_id: idMessage,
+      };
+
+      await axios.post(`https://graph.facebook.com/${envs.Version}/${businessPhoneNumberId}/messages`, messageData, { headers });
+      await axios.post(`https://graph.facebook.com/${envs.Version}/${businessPhoneNumberId}/messages`, statusData, { headers });
+
+    } catch (error) {
+      console.error("Error sending message:", error);
+    }
+
+    return mensaje;
   }
-  sendMessage();
-  return mensaje;
 }
-}
-
- // mark incoming message as read
-  //  await axios({
-  //     method: "POST",
-  //     url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
-  //    headers: {
-  //       Authorization: `Bearer ${envs.GRAPH_API_TOKEN}`,
-  //     },
-  //     data: {
-  //      messaging_product: "whatsapp",
-  //    status: "read",
-  //      message_id: message.id,
-  //  },
-  // });
-  // }
-
-//   
-
-//await axios({
-    //     method: "POST",
-    //     url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
-    //     headers: {
-    //       Authorization: `Bearer ${envs.GRAPH_API_TOKEN}`,
-    //     },
-    //     data: {
-    //       messaging_product: "whatsapp",
-    //       to: message.status,
-    //       text: {
-    //         body: "Su mensaje sera atendido pronto: " + message.conversation.id,
-    //       },
-    //       context: {
-    //         message_id: message.id, // shows the message as a reply to the original user message
-    //       },
-    //     },
-          
-      
-    //   });

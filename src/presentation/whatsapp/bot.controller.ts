@@ -9,43 +9,75 @@ export class BotController {
     ) {}
 
     webhook=async(req: Request, res: Response)=>  {
-      const payload = req.body;
-      let checked= payload.entry[0].changes[0].value.messages[0].type ? payload.entry[0].changes[0].value.messages[0].type : "text";
-      //const headers = req.headers;
-      //console.log(headers);
-      
-      //TODO: funcion por si es la primera vez que hace contacto
-        //console.log(payload.entry[0].changes[0].value.messages[0].type);
-
      
-      //onst message = req.body.entry?.[0]?.changes[0]?.value?.messages?.[0];
-     // const itsFirstMessage =req.body.entry?.[0]?.changes[0]?.value?.messages?.[0].type;
-      const whatsappEvent = req.headers;
+      try{
+          
+        const payload = req.body;
+        if (!payload.entry || !Array.isArray(payload.entry) || payload.entry.length === 0) {
+          return res.status(400).send("Invalid payload: No entry found");
+        }
+        const entry =payload.entry[0];
+        if (!entry.changes || !Array.isArray(entry.changes) || entry.changes.length === 0) {
+          return res.status(400).send("Invalid payload: No changes found");
+        }
+        
+        const changes=entry.changes[0];
+        if (!changes.value) {
+        return res.status(400).send("Invalid payload: No value found");
+        }
 
-      console.log(checked)
-      switch(checked) {
-        case "text":
-          this.botServices.onMessage(payload);
-          //console.log("text");
-          break;
-        case "image":
-          console.log("image");
-          break;
-        case "audio":
-          console.log("audio");
-          break;
-        case "video":
-          console.log("video");
-          break;
-        case "document":
-          break;
+        const value=changes.value;
+        if (!value.messages || !Array.isArray(value.messages) || value.messages.length === 0) {
+          return res.status(400).send("Invalid payload: No messages found");
+        }
 
-        default:
-          console.log("no paso el default")
-          break;
+        const messages=value.messages[0];
+        if (!messages.type) {
+         return res.status(400).send("Invalid payload: No message type found");
+        }
+        if(!messages){
+          return res.status(400).send("mensaje invalido")
+        }
+
+        const messageType=messages.type;
+        
+        if(!inWorkingHours()){
+          //mandara un un mensaje personalizado al usuario diciendo la hora de atencion y tambien guardara en la base de datos
+          return res.status(400).send("No se puede enviar el mensaje en este horario")
+        }
+         
+        //TODO: funcion por si es la primera vez que hace contacto
+       
+        switch(messageType) {
+          case "text":
+            this.botServices.onMessage(payload);
+            //console.log("text");
+            break;
+          case "image":
+            console.log("image");
+            break;
+          case "audio":
+            console.log("audio");
+            break;
+          case "video":
+            console.log("video");
+            break;
+          case "document":
+            break;
+  
+          default:
+            console.log("no paso el default")
+            break;
+        }
+
+
+
+      }catch (error) {
+        console.error("Error processing webhook:", error);
+        res.status(500).send("Internal Server Error");
       }
 
-
+    }
 
 
 
@@ -111,7 +143,7 @@ export class BotController {
       //   }
       }
     
-       };
+    
 
 
     
