@@ -15,7 +15,6 @@ function main(){
 
   app.post("/webhook",controller.webhook);
   
-  // solo acepta requests de /webhook endpoint.
   // info sobr el request payload: https://developers.facebook.com/docs/graph-api/webhooks/getting-started#verification-requests
   app.get("/webhook", (req, res) => {
     const mode = req.query["hub.mode"];

@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { BotServices } from "../services/bot.services";
+import { inWorkingHours } from "../../functions";
 export class BotController {
 
     constructor(
@@ -38,31 +39,38 @@ export class BotController {
         }
         const messageType=messages.type;
 
-        // if(!inWorkingHours()){
-        //   //mandara un un mensaje personalizado al usuario diciendo la hora de atencion y tambien guardara en la base de datos
-        //   return res.status(400).send("No se puede enviar el mensaje en este horario")
-        // }
+         if(!inWorkingHours()){
+           //mandara un un mensaje personalizado al usuario diciendo la hora de atencion y tambien guardara en la base de datos
+         return res.status(400).send("No se puede enviar el mensaje en este horario")
+        }
          
         //TODO: funcion por si es la primera vez que hace contacto
        
         switch(messageType) {
           case "text":
             this.botServices.onMessage(payload);
+            res.status(200).send("OK");
             break;
           case "image":
             console.log("image");
+            res.status(200).send("OK");
             break;
           case "audio":
             console.log("audio");
+            res.status(200).send("OK");
             break;
           case "video":
             console.log("video");
+            res.status(200).send("OK");
             break;
           case "document":
+            console.log("document");
+            res.status(200).send("OK");
             break;
   
           default:
             console.log("no paso el default")
+            res.status(200).send("OK");
             break;
         }
 
