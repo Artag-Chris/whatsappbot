@@ -6,7 +6,8 @@ export const envs={
     WEBHOOK_VERIFY_TOKEN:get('WEBHOOK_VERIFY_TOKEN').required().asString(),
     GRAPH_API_TOKEN:get('GRAPH_API_TOKEN').required().asString(),
     Version:get('Version').required().asString(),
-    URLCREATEAPI:get('URLCREATEAPI').required().asString(),
+    URLCREATEMESSAGE:get('URLCREATEMESSAGE').required().asString(),
+    URLCREATENEWUSER:get('URLCREATENEWUSER').required().asString(),
 
 }
   

@@ -3,10 +3,9 @@ import { IncomingWhatsappMessage } from "../config/interfaces";
 import {envs} from "../config/envs/envs";
 
 export async function sendMessageToApi(payload: IncomingWhatsappMessage): Promise<AxiosResponse<any>> {
-    const apiUrl = envs.URLCREATEAPI;
+    const apiUrl = envs.URLCREATEMESSAGE;
     try {
         const response = await axios.post(apiUrl, payload);
-        //console.log('Payload enviado exitosamente:', response.data);
         return response;
     } catch (error) {
         if (axios.isAxiosError(error)) {
