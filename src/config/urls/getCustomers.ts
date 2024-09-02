@@ -14,4 +14,4 @@ export const getPhones = async () => {
     }
   };
   
-  getPhones();
+  //getPhones();
