@@ -53,6 +53,7 @@ export class BotController {
             break;
           case "image":
             console.log("image");
+            console.log(payload);
             res.status(200).send("OK");
             break;
           case "audio":

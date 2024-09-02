@@ -1,12 +1,13 @@
+import axios from "axios";
 import { IncomingWhatsappMessage } from "../../config/interfaces/whatsappMessage.interface";
 import { envs } from "../../config/envs/envs";
-import axios from "axios";
 import { findMenu } from "../../functions";
 import { handleMenuOption } from "../../functions/handleMenuOptions";
+import {header} from "../../config/urls"
 
 export class BotServices {
   constructor() {}
-
+  
   async onMessage(payload: IncomingWhatsappMessage): Promise<string> {
     let mensaje = "hola mundo";
     const telefonoAEnviar = payload.entry?.[0].changes?.[0].value?.messages?.[0].from;
@@ -21,10 +22,7 @@ export class BotServices {
     }
     
     try {
-      const headers = {
-        Authorization: `Bearer ${envs.GRAPH_API_TOKEN}`,
-      };
-      
+      const headers = header
       const menu = findMenu(bodyMessage);
       if (menu) {
         const messageData = {
@@ -44,12 +42,33 @@ export class BotServices {
      
        handleMenuOption(menu, payload);
       }
-
     } catch (error) {
       console.error("Error sending message:", error);
     }
     return mensaje;
   }
+ 
+  async onMessageImage(payload:IncomingWhatsappMessage): Promise<string>{
+    const mensaje="hola desde mensaje"
+    const telefonoAEnviar = payload.entry?.[0].changes?.[0].value?.messages?.[0].from;
+    const businessPhoneNumberId = payload.entry?.[0].changes?.[0].value?.metadata?.phone_number_id;
+    const idMessage = payload.entry?.[0].changes?.[0].value?.messages?.[0].id;
+    const cuerpoDelMensaje = payload.entry?.[0].changes?.[0].value?.messages?.[0];
+    const bodyMessage = cuerpoDelMensaje?.text?.body;
+
+    if (!telefonoAEnviar || !businessPhoneNumberId || !idMessage || !bodyMessage) {
+      console.error("Missing required data from payload");
+      return mensaje;
+    }
+    
+    return mensaje
+  }
+
+
+
+
+
+
 }
 
 
