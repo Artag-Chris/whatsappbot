@@ -53,7 +53,7 @@ export class BotController {
             break;
           case "image":
             console.log("image");
-            this.botServices.onMessageImage(payload);
+            this.botServices.onImageMessage(payload);
            
             res.status(200).send("OK");
             break;
