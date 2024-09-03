@@ -1,7 +1,7 @@
 import axios from "axios";
 import { IncomingWhatsappDocument, IncomingWhatsappImage, IncomingWhatsappMessage, IncomingWhatsappVideo, IncomingWhatsappVoice, } from "../../config/interfaces";
 import { envs } from "../../config/envs/envs";
-import { findMenu, readingMimeExtension, readingMimeExtensionForAudio, renameFile } from "../../functions";
+import { documentExtention, findMenu, readingMimeExtension, readingMimeExtensionForAudio, renameFile } from "../../functions";
 import { handleMenuOption } from "../../functions/handleMenuOptions";
 import { header } from "../../config/urls"
 import path from 'path';
@@ -254,7 +254,7 @@ export class BotServices {
     const headers = header;
     //TODO los documentos deben pasar por distintos filtros para poder colocarle bien las extenciones
     //por ahora soloo funcionan los pdf 
-    const extension = readingMimeExtensionForAudio(message.document.mime_type, "/");
+    const extension = documentExtention(message.document.mime_type)
     //console.log(extension)
     if(!mediaId){
       return "no se encontro Documento"
