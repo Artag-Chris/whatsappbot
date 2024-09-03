@@ -19,17 +19,14 @@ export class BotController {
         if (!entry.changes || !Array.isArray(entry.changes) || entry.changes.length === 0) {
           return res.status(400).send("Invalid payload: No changes found");
         }
-        
         const changes=entry.changes[0];
         if (!changes.value) {
         return res.status(400).send("Invalid payload: No value found");
         }
-
         const value=changes.value;
         if (!value.messages || !Array.isArray(value.messages) || value.messages.length === 0) {
           return res.status(400).send("Invalid payload: No messages found");
         }
-
         const messages=value.messages[0];
         if (!messages.type) {
          return res.status(400).send("Invalid payload: No message type found");
@@ -53,12 +50,12 @@ export class BotController {
             break;
           case "image":
             console.log("image");
-            this.botServices.onImageMessage(payload);
-           
+            this.botServices.onImageMessage(payload); 
             res.status(200).send("OK");
             break;
           case "audio":
             console.log("audio");
+            this.botServices.onVoiceMessage(payload);
             res.status(200).send("OK");
             break;
           case "video":

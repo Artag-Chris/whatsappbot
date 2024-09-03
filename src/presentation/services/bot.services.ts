@@ -1,5 +1,5 @@
 import axios from "axios";
-import { IncomingWhatsappImage, IncomingWhatsappMessage, } from "../../config/interfaces";
+import { IncomingWhatsappImage, IncomingWhatsappMessage, IncomingWhatsappVoice, } from "../../config/interfaces";
 import { envs } from "../../config/envs/envs";
 import { findMenu, readingMimeExtension, renameFile } from "../../functions";
 import { handleMenuOption } from "../../functions/handleMenuOptions";
@@ -65,16 +65,13 @@ export class BotServices {
     if(!mediaId){
       return "no se encontro imagen"
     }
- 
+
     try{
       const metaResponse = await axios.get(
         `https://graph.facebook.com/v20.0/${mediaId}`,
         { headers }
       );
       const fileUrl = metaResponse.data.url;
-   
-      //TODO hay que cambiarle el nombre del archivo descargado a algo random para que no se sobreescriba
-      //Ruta donde deseas guardar el archivo
 
       const outputPath = path.join(__dirname, "../../../uploads", "File.jpg");
 
@@ -94,7 +91,11 @@ export class BotServices {
           response.data.pipe(writer);
 
           writer.on("finish", () => {
-            renameFile(outputPath, "File.jpg",extension, (error) => {
+
+            //TODO se combertira el archivo a binario y despues a base64
+            // y se enviara a la api y esta guardara la info en la base de datos como un string
+
+            renameFile(outputPath, "File.jpg", extension, (error) => {
               if (error) {
                 console.error("Error al renombrar el archivo:", error);
               }
@@ -116,7 +117,71 @@ export class BotServices {
     }   
 
     const mensaje="hola desde mensaje"
+    return mensaje
+  }
+  async onVoiceMessage(payload:IncomingWhatsappVoice): Promise<string>{
+    const message=payload.entry?.[0].changes?.[0].value?.messages?.[0];
+    const mediaId= message.audio?.id;
+    const headers = header;
+  
+   // const extension = readingMimeExtension(message.audio.mime_type, "/");
+   // console.log(extension);
+    if(!mediaId){
+      return "no se encontro imagen"
+    }
 
+    try{
+      const metaResponse = await axios.get(
+        `https://graph.facebook.com/v20.0/${mediaId}`,
+        { headers }
+      );
+      const fileUrl = metaResponse.data.url;
+
+      const outputPath = path.join(__dirname, "../../../uploads", "File.ogg");
+
+      // Realizar la solicitud GET para descargar el archivo
+     
+      axios({
+        method: "get",
+        url: fileUrl,
+        responseType: "stream", // Importante para manejar la respuesta como un flujo de datos
+        headers: headers,
+      })
+        .then((response) => {
+          // Crear un flujo de escritura para guardar el archivo
+          const writer = fs.createWriteStream(outputPath);
+
+          //Conectar el flujo de datos de la respuesta al flujo de escritura
+          response.data.pipe(writer);
+
+          writer.on("finish", () => {
+          console.log("Archivo descargado con éxito");
+            //TODO se combertira el archivo a binario y despues a base64
+            // y se enviara a la api y esta guardara la info en la base de datos como un string
+/*
+            renameFile(outputPath, "File.ogg", extension, (error) => {
+              if (error) {
+                console.error("Error al renombrar el archivo:", error);
+              }
+              console.log("Archivo renombrado con éxito");
+            })
+*/
+          });
+
+          writer.on("error", (err) => {
+            console.error("Error al guardar el archivo:", err);
+          });
+          
+        })
+        .catch((error) => {
+          console.error("Error al descargar el archivo:", error);
+        });
+    
+    }catch (error) {
+      console.error(error);
+    }   
+
+    const mensaje="hola desde mensaje"
     return mensaje
   }
 
