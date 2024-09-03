@@ -1,7 +1,7 @@
 import axios from "axios";
 import { IncomingWhatsappImage, IncomingWhatsappMessage, } from "../../config/interfaces";
 import { envs } from "../../config/envs/envs";
-import { findMenu } from "../../functions";
+import { findMenu, readingMimeExtension, renameFile } from "../../functions";
 import { handleMenuOption } from "../../functions/handleMenuOptions";
 import { header } from "../../config/urls"
 import path from 'path';
@@ -58,10 +58,9 @@ export class BotServices {
     const message=payload.entry?.[0].changes?.[0].value?.messages?.[0];
     const mediaId= message.image?.id;
     const headers = header;
-    
-
-      // Configuración de multer para guardar archivos en una carpeta local
-      //aun no se implementa multer para hacer la descarga y la filtracion de la imagen
+  
+    //console.log(readingMimeExtension(message.image.mime_type, "/"));
+    const extension = readingMimeExtension(message.image.mime_type, "/");
 
     if(!mediaId){
       return "no se encontro imagen"
@@ -77,7 +76,6 @@ export class BotServices {
       //TODO hay que cambiarle el nombre del archivo descargado a algo random para que no se sobreescriba
       //Ruta donde deseas guardar el archivo
 
-      
       const outputPath = path.join(__dirname, "../../../uploads", "File.jpg");
 
       // Realizar la solicitud GET para descargar el archivo
@@ -92,31 +90,30 @@ export class BotServices {
           // Crear un flujo de escritura para guardar el archivo
           const writer = fs.createWriteStream(outputPath);
 
-          // Conectar el flujo de datos de la respuesta al flujo de escritura
+          //Conectar el flujo de datos de la respuesta al flujo de escritura
           response.data.pipe(writer);
 
           writer.on("finish", () => {
-            console.log(
-              "Archivo descargado y guardado exitosamente en:",
-              outputPath
-            );
+            renameFile(outputPath, "File.jpg",extension, (error) => {
+              if (error) {
+                console.error("Error al renombrar el archivo:", error);
+              }
+              console.log("Archivo renombrado con éxito");
+            })
           });
 
           writer.on("error", (err) => {
             console.error("Error al guardar el archivo:", err);
           });
-
           
         })
         .catch((error) => {
           console.error("Error al descargar el archivo:", error);
         });
-
     
     }catch (error) {
       console.error(error);
-    }
-    
+    }   
 
     const mensaje="hola desde mensaje"
 
