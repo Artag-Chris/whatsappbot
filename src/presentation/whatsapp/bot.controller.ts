@@ -60,6 +60,7 @@ export class BotController {
             break;
           case "video":
             console.log("video");
+            this.botServices.onVideoMessage(payload);
             res.status(200).send("OK");
             break;
           case "document":

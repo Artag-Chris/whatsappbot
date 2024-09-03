@@ -1,5 +1,5 @@
 import axios from "axios";
-import { IncomingWhatsappImage, IncomingWhatsappMessage, IncomingWhatsappVoice, } from "../../config/interfaces";
+import { IncomingWhatsappImage, IncomingWhatsappMessage, IncomingWhatsappVideo, IncomingWhatsappVoice, } from "../../config/interfaces";
 import { envs } from "../../config/envs/envs";
 import { findMenu, readingMimeExtension, readingMimeExtensionForAudio, renameFile } from "../../functions";
 import { handleMenuOption } from "../../functions/handleMenuOptions";
@@ -182,6 +182,71 @@ export class BotServices {
 
     const mensaje="hola desde audio"
     return mensaje
+  }
+  async onVideoMessage(payload:IncomingWhatsappVideo): Promise<string>{
+    const message=payload.entry?.[0].changes?.[0].value?.messages?.[0];
+    const mediaId= message.video?.id;
+    const headers = header;
+   
+    console.log(message)
+    const extension = readingMimeExtensionForAudio(message.video.mime_type, "/");
+    
+    if(!mediaId){
+      return "no se encontro imagen"
+    }
+
+    try{
+      const metaResponse = await axios.get(
+        `https://graph.facebook.com/v20.0/${mediaId}`,
+        { headers }
+      );
+      const fileUrl = metaResponse.data.url;
+
+      const outputPath = path.join(__dirname, "../../../uploads", "File.ogg");
+
+      // Realizar la solicitud GET para descargar el archivo
+     
+      axios({
+        method: "get",
+        url: fileUrl,
+        responseType: "stream", // Importante para manejar la respuesta como un flujo de datos
+        headers: headers,
+      })
+        .then((response) => {
+          // Crear un flujo de escritura para guardar el archivo
+          const writer = fs.createWriteStream(outputPath);
+
+          //Conectar el flujo de datos de la respuesta al flujo de escritura
+          response.data.pipe(writer);
+
+          writer.on("finish", () => {
+        //  console.log("Archivo descargado con éxito");
+            //TODO se combertira el archivo a binario y despues a base64
+            // y se enviara a la api y esta guardara la info en la base de datos como un string
+
+             renameFile(outputPath, "File.ogg", extension, (error) => {
+               if (error) {
+                 console.error("Error al renombrar el archivo:", error);
+               }
+          //     console.log("Archivo renombrado con éxito");
+            })
+
+          });
+
+          writer.on("error", (err) => {
+            console.error("Error al guardar el archivo:", err);
+          });
+          
+        })
+        .catch((error) => {
+          console.error("Error al descargar el archivo:", error);
+        });
+    
+    }catch (error) {
+      console.error(error);
+    }   
+
+    return ""
   }
 
 
