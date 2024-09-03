@@ -1,7 +1,7 @@
 import axios from "axios";
 import { IncomingWhatsappImage, IncomingWhatsappMessage, IncomingWhatsappVoice, } from "../../config/interfaces";
 import { envs } from "../../config/envs/envs";
-import { findMenu, readingMimeExtension, renameFile } from "../../functions";
+import { findMenu, readingMimeExtension, readingMimeExtensionForAudio, renameFile } from "../../functions";
 import { handleMenuOption } from "../../functions/handleMenuOptions";
 import { header } from "../../config/urls"
 import path from 'path';
@@ -52,7 +52,6 @@ export class BotServices {
     }
     return mensaje;
   }
- 
   async onImageMessage(payload:IncomingWhatsappImage): Promise<string>{
     
     const message=payload.entry?.[0].changes?.[0].value?.messages?.[0];
@@ -124,8 +123,8 @@ export class BotServices {
     const mediaId= message.audio?.id;
     const headers = header;
   
-   // const extension = readingMimeExtension(message.audio.mime_type, "/");
-   // console.log(extension);
+   const extension = readingMimeExtensionForAudio(message.audio.mime_type, "/");
+    
     if(!mediaId){
       return "no se encontro imagen"
     }
@@ -155,17 +154,17 @@ export class BotServices {
           response.data.pipe(writer);
 
           writer.on("finish", () => {
-          console.log("Archivo descargado con éxito");
+        //  console.log("Archivo descargado con éxito");
             //TODO se combertira el archivo a binario y despues a base64
             // y se enviara a la api y esta guardara la info en la base de datos como un string
-/*
-            renameFile(outputPath, "File.ogg", extension, (error) => {
-              if (error) {
-                console.error("Error al renombrar el archivo:", error);
-              }
-              console.log("Archivo renombrado con éxito");
+
+             renameFile(outputPath, "File.ogg", extension, (error) => {
+               if (error) {
+                 console.error("Error al renombrar el archivo:", error);
+               }
+          //     console.log("Archivo renombrado con éxito");
             })
-*/
+
           });
 
           writer.on("error", (err) => {
@@ -181,7 +180,7 @@ export class BotServices {
       console.error(error);
     }   
 
-    const mensaje="hola desde mensaje"
+    const mensaje="hola desde audio"
     return mensaje
   }
 
