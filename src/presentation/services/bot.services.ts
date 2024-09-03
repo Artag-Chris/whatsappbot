@@ -1,7 +1,7 @@
 import axios from "axios";
 import { IncomingWhatsappDocument, IncomingWhatsappImage, IncomingWhatsappMessage, IncomingWhatsappVideo, IncomingWhatsappVoice, } from "../../config/interfaces";
 import { envs } from "../../config/envs/envs";
-import { documentExtention, findMenu, readingMimeExtension, readingMimeExtensionForAudio, renameFile } from "../../functions";
+import { audioExtention, documentExtention, findMenu, readingMimeExtension, readingMimeExtensionForAudio, renameFile, videoExtention } from "../../functions";
 import { handleMenuOption } from "../../functions/handleMenuOptions";
 import { header } from "../../config/urls"
 import path from 'path';
@@ -123,42 +123,35 @@ export class BotServices {
     const mediaId= message.audio?.id;
     const headers = header;
   
-   const extension = readingMimeExtensionForAudio(message.audio.mime_type, "/");
-    
+   const extension = audioExtention(message.audio.mime_type)
+
     if(!mediaId){
       return "no se encontro imagen"
     }
-
     try{
       const metaResponse = await axios.get(
-        `https://graph.facebook.com/v20.0/${mediaId}`,
+        `https://graph.facebook.com/${envs.Version}/${mediaId}`,
         { headers }
       );
       const fileUrl = metaResponse.data.url;
 
-      const outputPath = path.join(__dirname, "../../../uploads", "File.ogg");
-
-      // Realizar la solicitud GET para descargar el archivo
-     
+      const outputPath = path.join(__dirname, "../../../uploads", "File");
+   
       axios({
         method: "get",
         url: fileUrl,
-        responseType: "stream", // Importante para manejar la respuesta como un flujo de datos
+        responseType: "stream", 
         headers: headers,
       })
         .then((response) => {
-          // Crear un flujo de escritura para guardar el archivo
           const writer = fs.createWriteStream(outputPath);
-
-          //Conectar el flujo de datos de la respuesta al flujo de escritura
           response.data.pipe(writer);
 
           writer.on("finish", () => {
-        //  console.log("Archivo descargado con éxito");
             //TODO se combertira el archivo a binario y despues a base64
             // y se enviara a la api y esta guardara la info en la base de datos como un string
 
-             renameFile(outputPath, "File.ogg", extension, (error) => {
+             renameFile(outputPath, "File", extension, (error) => {
                if (error) {
                  console.error("Error al renombrar el archivo:", error);
                }
@@ -179,29 +172,27 @@ export class BotServices {
     }catch (error) {
       console.error(error);
     }   
-
-    const mensaje="hola desde audio"
+    const mensaje="descargando con exito"
     return mensaje
   }
   async onVideoMessage(payload:IncomingWhatsappVideo): Promise<string>{
     const message=payload.entry?.[0].changes?.[0].value?.messages?.[0];
     const mediaId= message.video?.id;
     const headers = header;
+    const extension = videoExtention(message.video.mime_type)
    
-    const extension = readingMimeExtensionForAudio(message.video.mime_type, "/");
-    
     if(!mediaId){
-      return "no se encontro imagen"
+      return "no se encontro video"
     }
 
     try{
       const metaResponse = await axios.get(
-        `https://graph.facebook.com/v20.0/${mediaId}`,
+        `https://graph.facebook.com/${envs.Version}/${mediaId}`,
         { headers }
       );
       const fileUrl = metaResponse.data.url;
 
-      const outputPath = path.join(__dirname, "../../../uploads", "File.ogg");
+      const outputPath = path.join(__dirname, "../../../uploads", "File");
 
       // Realizar la solicitud GET para descargar el archivo
      
@@ -212,30 +203,23 @@ export class BotServices {
         headers: headers,
       })
         .then((response) => {
-          // Crear un flujo de escritura para guardar el archivo
           const writer = fs.createWriteStream(outputPath);
-
-          //Conectar el flujo de datos de la respuesta al flujo de escritura
           response.data.pipe(writer);
 
           writer.on("finish", () => {
-        //  console.log("Archivo descargado con éxito");
             //TODO se combertira el archivo a binario y despues a base64
             // y se enviara a la api y esta guardara la info en la base de datos como un string
 
-             renameFile(outputPath, "File.ogg", extension, (error) => {
+             renameFile(outputPath, "File", extension, (error) => {
                if (error) {
                  console.error("Error al renombrar el archivo:", error);
                }
-          //     console.log("Archivo renombrado con éxito");
             })
-
           });
 
           writer.on("error", (err) => {
             console.error("Error al guardar el archivo:", err);
           });
-          
         })
         .catch((error) => {
           console.error("Error al descargar el archivo:", error);
@@ -245,30 +229,24 @@ export class BotServices {
       console.error(error);
     }   
 
-    return ""
+    return "descargado correctamente"
   }
   async onDocumentMessage(payload:IncomingWhatsappDocument): Promise<string>{
 
     const message=payload.entry?.[0].changes?.[0].value?.messages?.[0];
     const mediaId= message.document?.id;
     const headers = header;
-    //TODO los documentos deben pasar por distintos filtros para poder colocarle bien las extenciones
-    //por ahora soloo funcionan los pdf 
     const extension = documentExtention(message.document.mime_type)
-    //console.log(extension)
     if(!mediaId){
-      return "no se encontro Documento"
+      return "no se encontro Documento";
     }
     try{
       const metaResponse = await axios.get(
-        `https://graph.facebook.com/v20.0/${mediaId}`,
+        `https://graph.facebook.com/${envs.Version}/${mediaId}`,
         { headers }
       );
       const fileUrl = metaResponse.data.url;
-
-      const outputPath = path.join(__dirname, "../../../uploads", "File.ogg");
-
-      // Realizar la solicitud GET para descargar el archivo
+      const outputPath = path.join(__dirname, "../../../uploads", "File");
      
       axios({
         method: "get",
@@ -277,30 +255,24 @@ export class BotServices {
         headers: headers,
       })
         .then((response) => {
-          // Crear un flujo de escritura para guardar el archivo
           const writer = fs.createWriteStream(outputPath);
 
-          //Conectar el flujo de datos de la respuesta al flujo de escritura
           response.data.pipe(writer);
 
           writer.on("finish", () => {
-        //  console.log("Archivo descargado con éxito");
             //TODO se combertira el archivo a binario y despues a base64
             // y se enviara a la api y esta guardara la info en la base de datos como un string
 
-             renameFile(outputPath, "File.pdf", extension, (error) => {
+             renameFile(outputPath, "File", extension, (error) => {
                if (error) {
                  console.error("Error al renombrar el archivo:", error);
                }
-          //     console.log("Archivo renombrado con éxito");
             })
-
           });
 
           writer.on("error", (err) => {
             console.error("Error al guardar el archivo:", err);
-          });
-          
+          }); 
         })
         .catch((error) => {
           console.error("Error al descargar el archivo:", error);
@@ -309,12 +281,8 @@ export class BotServices {
     }catch (error) {
       console.error(error);
     }   
-
-    return ""
+    return "descargado correctamente"
   }
-
-
-
 
 
 }

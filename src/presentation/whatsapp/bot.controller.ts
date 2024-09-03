@@ -53,17 +53,17 @@ export class BotController {
             res.status(200).send("OK");
             break;
           case "audio":;
-            this.botServices.onVoiceMessage(payload);
-            res.status(200).send("OK");
+           const audio= this.botServices.onVoiceMessage(payload);
+            res.status(200).send(audio);
             break;
           case "video":
-            this.botServices.onVideoMessage(payload);
-            res.status(200).send("OK");
+          const video =  this.botServices.onVideoMessage(payload);
+            res.status(200).send(video);
             break;
           case "document":
-            console.log("document");
-            this.botServices.onDocumentMessage(payload);
-            res.status(200).send("OK");
+            console.log("receiving document");
+            const document = this.botServices.onDocumentMessage(payload);
+            res.status(200).send(document);
             break;
   
           default:

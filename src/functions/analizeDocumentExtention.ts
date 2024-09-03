@@ -12,3 +12,25 @@ export function documentExtention(mimeType: string): string {
 
     return mimeToExtension[mimeType] || "Tipo MIME no reconocido";
 }
+
+export function audioExtention(mimeType: string): string {
+    const mimeToExtension: { [key: string]: string } = {
+        "audio/aac": ".aac",
+        "audio/amr": ".amr",
+        "audio/mpeg":".mp3",
+        "audio/mp4": ".m4a",
+        "audio/ogg; codecs=opus": ".ogg"
+    };
+
+    return mimeToExtension[mimeType] || "Tipo MIME no reconocido";
+}
+
+export function videoExtention(mimeType: string): string {
+    const mimeToExtension: { [key: string]: string } = {
+        "video/3gp": ".3gp",
+        "video/mp4": ".mp4"
+    };
+
+    return mimeToExtension[mimeType] || "Tipo MIME no reconocido";
+}
+
