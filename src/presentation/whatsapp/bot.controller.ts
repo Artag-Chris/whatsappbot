@@ -49,22 +49,20 @@ export class BotController {
             res.status(200).send("OK");
             break;
           case "image":
-            console.log("image");
             this.botServices.onImageMessage(payload); 
             res.status(200).send("OK");
             break;
-          case "audio":
-            console.log("audio");
+          case "audio":;
             this.botServices.onVoiceMessage(payload);
             res.status(200).send("OK");
             break;
           case "video":
-            console.log("video");
             this.botServices.onVideoMessage(payload);
             res.status(200).send("OK");
             break;
           case "document":
             console.log("document");
+            this.botServices.onDocumentMessage(payload);
             res.status(200).send("OK");
             break;
   
