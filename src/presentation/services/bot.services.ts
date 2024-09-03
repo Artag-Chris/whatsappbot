@@ -4,7 +4,6 @@ import { envs } from "../../config/envs/envs";
 import { findMenu } from "../../functions";
 import { handleMenuOption } from "../../functions/handleMenuOptions";
 import { header } from "../../config/urls"
-import { upload } from "../../config/multer";
 import path from 'path';
 import fs from 'fs';
 
@@ -59,7 +58,7 @@ export class BotServices {
     const message=payload.entry?.[0].changes?.[0].value?.messages?.[0];
     const mediaId= message.image?.id;
     const headers = header;
-    const multer = upload;
+    
 
       // Configuración de multer para guardar archivos en una carpeta local
       //aun no se implementa multer para hacer la descarga y la filtracion de la imagen
@@ -76,7 +75,9 @@ export class BotServices {
       const fileUrl = metaResponse.data.url;
    
       //TODO hay que cambiarle el nombre del archivo descargado a algo random para que no se sobreescriba
-      // Ruta donde deseas guardar el archivo
+      //Ruta donde deseas guardar el archivo
+
+      
       const outputPath = path.join(__dirname, "../../../uploads", "File.jpg");
 
       // Realizar la solicitud GET para descargar el archivo
@@ -104,55 +105,20 @@ export class BotServices {
           writer.on("error", (err) => {
             console.error("Error al guardar el archivo:", err);
           });
+
+          
         })
         .catch((error) => {
           console.error("Error al descargar el archivo:", error);
         });
 
-      //const __filename = fileURLToPath(metaResponse.data.url);
-      //const __dirname = dirname(__filename);
-
-      //Dentro de la función donde procesas la subida de la imagen
-      // upload.single("image")(req, res, (err) => {
-      //   if (err) {
-      //   // Manejar el error de subida de archivo
-      //   console.error(err);
-      //   } else {
-      //   // Guardar la imagen en el sistema de archivos
-      //   fs.writeFile(
-      //     path.join(__dirname, "uploads/", req.file.filename),
-      //     req.file.buffer,
-      //     (err) => {
-      //       if (err) {
-      //         console.error(err);
-      //         // Manejar el error al guardar la imagen
-      //       } else {
-      //         console.log("Imagen guardada exitosamente");
-      //         // Realizar otras acciones después de guardar la imagen
-      //       }
-      //     }
-      //   );
-      //   }
-      //  });
-
-      //console.log(metaResponse.data.url)
+    
     }catch (error) {
       console.error(error);
     }
     
 
     const mensaje="hola desde mensaje"
-
-
-
-  
- 
-    
-    
-    
-    
- 
-
 
     return mensaje
   }
