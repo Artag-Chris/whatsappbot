@@ -1,11 +1,11 @@
+import fs from 'fs';
+import path from 'path';
 import axios from "axios";
 import { IncomingWhatsappDocument, IncomingWhatsappImage, IncomingWhatsappMessage, IncomingWhatsappVideo, IncomingWhatsappVoice, } from "../../config/interfaces";
 import { envs } from "../../config/envs/envs";
 import { audioExtention, documentExtention, findMenu, imageExtension,renameFile, videoExtention } from "../../functions";
 import { handleMenuOption } from "../../functions/handleMenuOptions";
 import { header } from "../../config/urls"
-import path from 'path';
-import fs from 'fs';
 import { WhatsappOutgoingAudio, WhatsappOutgoingDocument, WhatsappOutgoingImage, WhatsappOutgoingVideo } from "../../config/classes";
 
 
@@ -14,7 +14,8 @@ export class BotServices {
   constructor() {}
   
   async onMessage(payload: IncomingWhatsappMessage): Promise<string> {
-
+  //TODO implementar nueva logica para el envio de mensajes de texto con su clase
+  //TODO implementar funcion que reconosca si es el primer mensaje para mandarle una planilla personalizada
     let mensaje = "hola mundo";
     const telefonoAEnviar = payload.entry?.[0].changes?.[0].value?.messages?.[0].from;
     const businessPhoneNumberId = payload.entry?.[0].changes?.[0].value?.metadata?.phone_number_id;
@@ -347,7 +348,6 @@ export class BotServices {
     }   
     return "descargado correctamente"
   }
-
 
 }
 
