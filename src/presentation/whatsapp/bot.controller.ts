@@ -52,7 +52,8 @@ export class BotController {
           case "image":
             console.log("image");
            const image= this.botServices.onImageMessage(payload); 
-            res.status(200).send(image);
+           // console.log(JSON.stringify(payload))
+            res.status(200).send("image");
             break;
           case "audio":
             console.log("audio");

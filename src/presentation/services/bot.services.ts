@@ -6,6 +6,7 @@ import { handleMenuOption } from "../../functions/handleMenuOptions";
 import { header } from "../../config/urls"
 import path from 'path';
 import fs from 'fs';
+import { WhatsappOutgoingImage } from "../../config/classes";
 
 
 
@@ -54,7 +55,15 @@ export class BotServices {
     return mensaje;
   }
   async onImageMessage(payload:IncomingWhatsappImage): Promise<string>{
-    
+    const {changes} = payload.entry?.[0];
+    const {value} = changes?.[0];
+    //const {field} = changes?.[1];
+    const {messaging_product, metadata, contacts, messages} = value
+    const {phone_number_id,display_phone_number} = metadata
+    const {name} = contacts?.[0].profile
+    const {from,id,image,type}= messages?.[0]
+          
+
     const message=payload.entry?.[0].changes?.[0].value?.messages?.[0];
     const mediaId= message.image?.id;
     const headers = header;
@@ -92,15 +101,33 @@ export class BotServices {
 
           writer.on("finish", () => {
 
-            //TODO se combertira el archivo a binario y despues a base64
-            // y se enviara a la api y esta guardara la info en la base de datos como un string
-
-            renameFile(outputPath, "File", extension, (error) => {
+            
+           renameFile(outputPath, "File", extension, (error, renameFile) => {
+             
+            
               if (error) {
                 console.error("Error al renombrar el archivo:", error);
               }
-              console.log("Archivo renombrado con éxito");
+              const newPath= path.join(__dirname, "../../../uploads", renameFile!);
+              // Aquí puedes realizar acciones adicionales después de renombrar el archivo
+              fs.readFile(newPath, (err, data) => {
+                if (err) {
+                  console.error('Error al leer el archivo binario:', err);
+                  return;
+                }
+                const base64Data = data.toString('base64');
+                const outgoingImage= new WhatsappOutgoingImage( name,from,phone_number_id,base64Data,from,type);
+                //console.log('Archivo convertido a Base64:', base64Data);
+                outgoingImage.sendToApi();
+              })
+
+
             })
+
+            //TODO se combertira el archivo a binario y despues a base64
+            
+            // y se enviara a la api y esta guardara la info en la base de datos como un string
+           
           });
 
           writer.on("error", (err) => {
