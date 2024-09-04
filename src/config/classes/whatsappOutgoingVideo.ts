@@ -15,7 +15,7 @@ export class WhatsappOutgoingVideo {
   async sendToApi(): Promise<AxiosResponse<any>> {
     const headers = header;
 
-    const apiUrl = envs.URLIMAGEROUTE;
+    const apiUrl = envs.URLVIDEOROUTE;
     const payload = {
       name: this.name,
       phone: this.phone,

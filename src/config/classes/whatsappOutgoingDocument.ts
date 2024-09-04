@@ -7,7 +7,7 @@ export class WhatsappOutgoingDocument {
     private readonly name: string | undefined,
     private readonly phone: string,
     private readonly identification: string,
-    private readonly message: string, //sera el archivo base64
+    private readonly message: string,
     private readonly type: string,
     private readonly id: string
   ) {}
@@ -15,12 +15,12 @@ export class WhatsappOutgoingDocument {
   async sendToApi(): Promise<AxiosResponse<any>> {
     const headers = header;
 
-    const apiUrl = envs.URLIMAGEROUTE;
+    const apiUrl = envs.URLDOCROUTE;
     const payload = {
       name: this.name,
       phone: this.phone,
       identification: this.identification,
-      message: this.message, // Asegúrate de que `this.base64` esté definido
+      message: this.message,
       type: this.type,
       id: this.id,
     };

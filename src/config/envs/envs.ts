@@ -10,6 +10,7 @@ export const envs={
     URLCREATENEWUSER:get('URLCREATENEWUSER').required().asString(),
     URLIMAGEROUTE:get('URLIMAGEROUTE').required().asString(),
     URLAUDIOROUTE:get('URLAUDIOROUTE').required().asString(),
-
+    URLVIDEOROUTE:get('URLVIDEOROUTE').required().asString(),
+    URLDOCROUTE:get('URLDOCROUTE').required().asString(),
 }
   
