@@ -34,3 +34,11 @@ export function videoExtention(mimeType: string): string {
     return mimeToExtension[mimeType] || "Tipo MIME no reconocido";
 }
 
+export function imageExtension(mimeType: string): string {
+    const mimeToExtension: { [key: string]: string } = {
+      "image/jpeg": ".jpeg",
+      "image/png": ".png"
+    };
+    
+    return mimeToExtension[mimeType] || "Tipo MIME no reconocido";
+  }

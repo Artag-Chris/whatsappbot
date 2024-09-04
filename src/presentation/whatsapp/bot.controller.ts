@@ -45,23 +45,27 @@ export class BotController {
        
         switch(messageType) {
           case "text":
-            this.botServices.onMessage(payload);
-            res.status(200).send("OK");
+            console.log("text");
+            const text = this.botServices.onMessage(payload);
+            res.status(200).send(text);
             break;
           case "image":
-            this.botServices.onImageMessage(payload); 
-            res.status(200).send("OK");
+            console.log("image");
+           const image= this.botServices.onImageMessage(payload); 
+            res.status(200).send(image);
             break;
-          case "audio":;
+          case "audio":
+            console.log("audio");
            const audio= this.botServices.onVoiceMessage(payload);
             res.status(200).send(audio);
             break;
           case "video":
+            console.log("video");
           const video =  this.botServices.onVideoMessage(payload);
             res.status(200).send(video);
             break;
           case "document":
-            console.log("receiving document");
+            console.log("document");
             const document = this.botServices.onDocumentMessage(payload);
             res.status(200).send(document);
             break;

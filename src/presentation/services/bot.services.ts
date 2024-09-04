@@ -1,7 +1,7 @@
 import axios from "axios";
 import { IncomingWhatsappDocument, IncomingWhatsappImage, IncomingWhatsappMessage, IncomingWhatsappVideo, IncomingWhatsappVoice, } from "../../config/interfaces";
 import { envs } from "../../config/envs/envs";
-import { audioExtention, documentExtention, findMenu, readingMimeExtension, readingMimeExtensionForAudio, renameFile, videoExtention } from "../../functions";
+import { audioExtention, documentExtention, findMenu, imageExtension,renameFile, videoExtention } from "../../functions";
 import { handleMenuOption } from "../../functions/handleMenuOptions";
 import { header } from "../../config/urls"
 import path from 'path';
@@ -12,6 +12,7 @@ import fs from 'fs';
 export class BotServices {
   constructor() {}
   
+  //TODO: desde images hay que colocarle la funcion de leido y enviarala a la api
   async onMessage(payload: IncomingWhatsappMessage): Promise<string> {
 
     let mensaje = "hola mundo";
@@ -59,7 +60,7 @@ export class BotServices {
     const headers = header;
   
     //console.log(readingMimeExtension(message.image.mime_type, "/"));
-    const extension = readingMimeExtension(message.image.mime_type, "/");
+    const extension = imageExtension(message.image.mime_type)
 
     if(!mediaId){
       return "no se encontro imagen"
@@ -67,12 +68,12 @@ export class BotServices {
 
     try{
       const metaResponse = await axios.get(
-        `https://graph.facebook.com/v20.0/${mediaId}`,
+        `https://graph.facebook.com/${envs.Version}/${mediaId}`,
         { headers }
       );
       const fileUrl = metaResponse.data.url;
 
-      const outputPath = path.join(__dirname, "../../../uploads", "File.jpg");
+      const outputPath = path.join(__dirname, "../../../uploads", "File");
 
       // Realizar la solicitud GET para descargar el archivo
      
@@ -94,7 +95,7 @@ export class BotServices {
             //TODO se combertira el archivo a binario y despues a base64
             // y se enviara a la api y esta guardara la info en la base de datos como un string
 
-            renameFile(outputPath, "File.jpg", extension, (error) => {
+            renameFile(outputPath, "File", extension, (error) => {
               if (error) {
                 console.error("Error al renombrar el archivo:", error);
               }
@@ -115,7 +116,7 @@ export class BotServices {
       console.error(error);
     }   
 
-    const mensaje="hola desde mensaje"
+    const mensaje="imagen descargada con exito"
     return mensaje
   }
   async onVoiceMessage(payload:IncomingWhatsappVoice): Promise<string>{
