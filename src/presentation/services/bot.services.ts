@@ -6,7 +6,7 @@ import { handleMenuOption } from "../../functions/handleMenuOptions";
 import { header } from "../../config/urls"
 import path from 'path';
 import fs from 'fs';
-import { WhatsappOutgoingImage } from "../../config/classes";
+import { WhatsappOutgoingAudio, WhatsappOutgoingImage } from "../../config/classes";
 
 
 
@@ -57,18 +57,16 @@ export class BotServices {
   async onImageMessage(payload:IncomingWhatsappImage): Promise<string>{
     const {changes} = payload.entry?.[0];
     const {value} = changes?.[0];
-    //const {field} = changes?.[1];
-    const {messaging_product, metadata, contacts, messages} = value
-    const {phone_number_id,display_phone_number} = metadata
+    const {metadata, contacts, messages} = value
+    const {phone_number_id} = metadata
     const {name} = contacts?.[0].profile
-    const {from,id,image,type}= messages?.[0]
+    const {from,id,type}= messages?.[0]
           
 
     const message=payload.entry?.[0].changes?.[0].value?.messages?.[0];
     const mediaId= message.image?.id;
     const headers = header;
   
-    //console.log(readingMimeExtension(message.image.mime_type, "/"));
     const extension = imageExtension(message.image.mime_type)
 
     if(!mediaId){
@@ -93,18 +91,14 @@ export class BotServices {
         headers: headers,
       })
         .then((response) => {
-          // Crear un flujo de escritura para guardar el archivo
           const writer = fs.createWriteStream(outputPath);
 
-          //Conectar el flujo de datos de la respuesta al flujo de escritura
           response.data.pipe(writer);
 
           writer.on("finish", () => {
 
-            
            renameFile(outputPath, "File", extension, (error, renameFile) => {
              
-            
               if (error) {
                 console.error("Error al renombrar el archivo:", error);
               }
@@ -116,19 +110,13 @@ export class BotServices {
                   return;
                 }
                 const base64Data = data.toString('base64');
-                const outgoingImage= new WhatsappOutgoingImage( name,from,phone_number_id,base64Data,from,type);
+                const outgoingImage= new WhatsappOutgoingImage( name,from,phone_number_id,base64Data,type,id);
                 //console.log('Archivo convertido a Base64:', base64Data);
                 outgoingImage.sendToApi();
               })
-
-
-            })
-
-            //TODO se combertira el archivo a binario y despues a base64
-            
-            // y se enviara a la api y esta guardara la info en la base de datos como un string
-           
-          });
+            })           
+          }
+        );
 
           writer.on("error", (err) => {
             console.error("Error al guardar el archivo:", err);
@@ -147,6 +135,14 @@ export class BotServices {
     return mensaje
   }
   async onVoiceMessage(payload:IncomingWhatsappVoice): Promise<string>{
+    const {changes} = payload.entry?.[0];
+    const {value} = changes?.[0];
+    const {metadata, contacts, messages} = value
+    const {phone_number_id} = metadata
+    const {name} = contacts?.[0].profile
+    const {from,id,type}= messages?.[0]
+  
+
     const message=payload.entry?.[0].changes?.[0].value?.messages?.[0];
     const mediaId= message.audio?.id;
     const headers = header;
@@ -176,17 +172,25 @@ export class BotServices {
           response.data.pipe(writer);
 
           writer.on("finish", () => {
-            //TODO se combertira el archivo a binario y despues a base64
-            // y se enviara a la api y esta guardara la info en la base de datos como un string
 
-             renameFile(outputPath, "File", extension, (error) => {
+            renameFile(outputPath, "File", extension, (error, renameFile) => {
+              
                if (error) {
                  console.error("Error al renombrar el archivo:", error);
                }
-          //     console.log("Archivo renombrado con éxito");
-            })
-
-          });
+               const newPath= path.join(__dirname, "../../../uploads", renameFile!);
+               fs.readFile(newPath, (err, data) => {
+                 if (err) {
+                   console.error('Error al leer el archivo binario:', err);
+                   return;
+                 }
+                 const base64Data = data.toString('base64');
+                 const outgoingImage= new WhatsappOutgoingAudio( name,from,phone_number_id,base64Data,type,id);
+                 outgoingImage.sendToApi();
+               })
+             })           
+           }
+        );
 
           writer.on("error", (err) => {
             console.error("Error al guardar el archivo:", err);

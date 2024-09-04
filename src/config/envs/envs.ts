@@ -8,6 +8,8 @@ export const envs={
     Version:get('Version').required().asString(),
     URLCREATEMESSAGE:get('URLCREATEMESSAGE').required().asString(),
     URLCREATENEWUSER:get('URLCREATENEWUSER').required().asString(),
+    URLIMAGEROUTE:get('URLIMAGEROUTE').required().asString(),
+    URLAUDIOROUTE:get('URLAUDIOROUTE').required().asString(),
 
 }
   
