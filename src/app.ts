@@ -16,7 +16,6 @@ function main(){
   app.post("/webhook",controller.webhook);
   
   // info sobr el request payload: https://developers.facebook.com/docs/graph-api/webhooks/getting-started#verification-requests
-  //TODO mandar esta url al controlador
   app.get("/webhook", (req, res) => {
     const mode = req.query["hub.mode"];
     const token = req.query["hub.verify_token"];

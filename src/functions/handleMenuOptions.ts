@@ -3,7 +3,7 @@ import { sendMessageToApi } from "./sendMessageToApi";
 
 export async function handleMenuOption(
   menu: any,
-  payload: IncomingWhatsappMessage
+  payload: any
 ) {
   if (!menu) return;
 

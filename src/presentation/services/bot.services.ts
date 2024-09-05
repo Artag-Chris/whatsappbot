@@ -6,7 +6,8 @@ import { envs } from "../../config/envs/envs";
 import { audioExtention, documentExtention, findMenu, imageExtension,renameFile, videoExtention } from "../../functions";
 import { handleMenuOption } from "../../functions/handleMenuOptions";
 import { header } from "../../config/urls"
-import { WhatsappOutgoingAudio, WhatsappOutgoingDocument, WhatsappOutgoingImage, WhatsappOutgoingVideo } from "../../config/classes";
+import { WhatsappOutgoingAudio, WhatsappOutgoingDocument, WhatsappOutgoingImage, WhatsappOutgoingMessage, WhatsappOutgoingVideo } from "../../config/classes";
+import { OutgoingMessage } from 'http';
 
 
 
@@ -17,41 +18,26 @@ export class BotServices {
   //TODO implementar nueva logica para el envio de mensajes de texto con su clase
   //TODO implementar funcion que reconosca si es el primer mensaje para mandarle una planilla personalizada
     let mensaje = "hola mundo";
-    const telefonoAEnviar = payload.entry?.[0].changes?.[0].value?.messages?.[0].from;
-    const businessPhoneNumberId = payload.entry?.[0].changes?.[0].value?.metadata?.phone_number_id;
-    const idMessage = payload.entry?.[0].changes?.[0].value?.messages?.[0].id;
-    const cuerpoDelMensaje = payload.entry?.[0].changes?.[0].value?.messages?.[0];
-    const bodyMessage = cuerpoDelMensaje?.text?.body;
+    const {changes} = payload.entry?.[0];
+    const {value} = changes?.[0];
+    const {metadata, contacts, messages} = value
+    const {name} = contacts?.[0].profile
+    const {from,id,type}= messages?.[0]
+    const {body}= messages?.[0].text
+    const {display_phone_number,phone_number_id}= metadata
 
-    if (!telefonoAEnviar || !businessPhoneNumberId || !idMessage || !bodyMessage) {
+     
+    const phone = payload.entry?.[0].changes?.[0].value?.messages?.[0].from;
+    
+    if (!phone || !phone_number_id || !id || !body) {
       console.error("Missing required data from payload");
       return mensaje;
     }
     
-    try {
-      const headers = header
-      const menu = findMenu(bodyMessage);
-      if (menu) {
-        const messageData = {
-          messaging_product: "whatsapp",
-          to: telefonoAEnviar,
-          text: { body: `Sera atendido prontamente en ${menu}` },
-        };
-        
-        const statusData = {
-          messaging_product: "whatsapp",
-          status: "read",
-          message_id: idMessage,
-        };
-        
-        await axios.post(`https://graph.facebook.com/${envs.Version}/${businessPhoneNumberId}/messages`, messageData, { headers });
-        await axios.post(`https://graph.facebook.com/${envs.Version}/${businessPhoneNumberId}/messages`, statusData, { headers });
-     
-       handleMenuOption(menu, payload);
-      }
-    } catch (error) {
-      console.error("Error sending message:", error);
-    }
+    const outgoing=new WhatsappOutgoingMessage(name,phone,body,type,id,body,display_phone_number,phone_number_id);
+    outgoing.checkType()
+
+      
     return mensaje;
   }
   async onImageMessage(payload:IncomingWhatsappImage): Promise<string>{
