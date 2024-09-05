@@ -4,10 +4,9 @@ import axios from "axios";
 import { IncomingWhatsappDocument, IncomingWhatsappImage, IncomingWhatsappMessage, IncomingWhatsappVideo, IncomingWhatsappVoice, } from "../../config/interfaces";
 import { envs } from "../../config/envs/envs";
 import { audioExtention, documentExtention, findMenu, imageExtension,renameFile, videoExtention } from "../../functions";
-import { handleMenuOption } from "../../functions/handleMenuOptions";
 import { header } from "../../config/urls"
 import { WhatsappOutgoingAudio, WhatsappOutgoingDocument, WhatsappOutgoingImage, WhatsappOutgoingMessage, WhatsappOutgoingVideo } from "../../config/classes";
-import { OutgoingMessage } from 'http';
+
 
 
 
@@ -15,7 +14,7 @@ export class BotServices {
   constructor() {}
   
   async onMessage(payload: IncomingWhatsappMessage): Promise<string> {
-  //TODO implementar nueva logica para el envio de mensajes de texto con su clase
+
   //TODO implementar funcion que reconosca si es el primer mensaje para mandarle una planilla personalizada
     let mensaje = "hola mundo";
     const {changes} = payload.entry?.[0];
