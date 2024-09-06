@@ -21,7 +21,7 @@ export class BotServices {
     const {value} = changes?.[0];
     const {metadata, contacts, messages} = value
     const {name} = contacts?.[0].profile
-    const {from,id,type}= messages?.[0]
+    const {id,type}= messages?.[0]
     const {body}= messages?.[0].text
     const {display_phone_number,phone_number_id}= metadata
 
@@ -32,18 +32,18 @@ export class BotServices {
       console.error("Missing required data from payload");
       return mensaje;
     }
+   
     
     const outgoing=new WhatsappOutgoingMessage(name,phone,body,type,id,body,display_phone_number,phone_number_id);
     outgoing.checkType()
-
-      
+  
     return mensaje;
   }
   async onImageMessage(payload:IncomingWhatsappImage): Promise<string>{
     const {changes} = payload.entry?.[0];
     const {value} = changes?.[0];
     const {metadata, contacts, messages} = value
-    const {phone_number_id} = metadata
+    const {display_phone_number} = metadata
     const {name} = contacts?.[0].profile
     const {from,id,type}= messages?.[0]
           
@@ -95,7 +95,7 @@ export class BotServices {
                   return;
                 }
                 const base64Data = data.toString('base64');
-                const outgoingImage= new WhatsappOutgoingImage( name,from,phone_number_id,base64Data,type,id);
+                const outgoingImage= new WhatsappOutgoingImage( name,from,display_phone_number,base64Data,type,id);
                 //console.log('Archivo convertido a Base64:', base64Data);
                 outgoingImage.sendToApi();
               })
@@ -123,7 +123,7 @@ export class BotServices {
     const {changes} = payload.entry?.[0];
     const {value} = changes?.[0];
     const {metadata, contacts, messages} = value
-    const {phone_number_id} = metadata
+    const {display_phone_number} = metadata
     const {name} = contacts?.[0].profile
     const {from,id,type}= messages?.[0]
   
@@ -170,7 +170,7 @@ export class BotServices {
                    return;
                  }
                  const base64Data = data.toString('base64');
-                 const outgoingImage= new WhatsappOutgoingAudio( name,from,phone_number_id,base64Data,type,id);
+                 const outgoingImage= new WhatsappOutgoingAudio( name,from,display_phone_number,base64Data,type,id);
                  outgoingImage.sendToApi();
                })
              })           
@@ -197,7 +197,7 @@ export class BotServices {
     const {changes} = payload.entry?.[0];
     const {value} = changes?.[0];
     const {metadata, contacts, messages} = value
-    const {phone_number_id} = metadata
+    const {display_phone_number} = metadata
     const {name} = contacts?.[0].profile
     const {from,id,type}= messages?.[0]
        
@@ -246,7 +246,7 @@ export class BotServices {
                    return;
                  }
                  const base64Data = data.toString('base64');
-                 const outgoingImage= new WhatsappOutgoingVideo( name,from,phone_number_id,base64Data,type,id);
+                 const outgoingImage= new WhatsappOutgoingVideo( name,from,display_phone_number,base64Data,type,id);
                  outgoingImage.sendToApi();
                })
              })           
@@ -270,7 +270,7 @@ export class BotServices {
     const {changes} = payload.entry?.[0];
     const {value} = changes?.[0];
     const {metadata, contacts, messages} = value
-    const {phone_number_id} = metadata
+    const {display_phone_number} = metadata
     const {name} = contacts?.[0].profile
     const {from,id,type}= messages?.[0]
 
@@ -314,7 +314,7 @@ export class BotServices {
                    return;
                  }
                  const base64Data = data.toString('base64');
-                 const outgoingImage= new WhatsappOutgoingDocument( name,from,phone_number_id,base64Data,type,id);
+                 const outgoingImage= new WhatsappOutgoingDocument( name,from,display_phone_number,base64Data,type,id);
                  outgoingImage.sendToApi();
                })
              })           

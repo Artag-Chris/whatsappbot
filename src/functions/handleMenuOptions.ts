@@ -1,4 +1,3 @@
-import { IncomingWhatsappMessage } from "../config/interfaces";
 import { sendMessageToApi } from "./sendMessageToApi";
 
 export async function handleMenuOption(

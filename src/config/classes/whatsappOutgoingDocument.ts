@@ -6,7 +6,7 @@ export class WhatsappOutgoingDocument {
   constructor(
     private readonly name: string | undefined,
     private readonly phone: string,
-    private readonly identification: string,
+    private readonly display_phone_number: string,
     private readonly message: string,
     private readonly type: string,
     private readonly id: string
@@ -19,7 +19,7 @@ export class WhatsappOutgoingDocument {
     const payload = {
       name: this.name,
       phone: this.phone,
-      identification: this.identification,
+      to: this.display_phone_number,
       message: this.message,
       type: this.type,
       id: this.id,

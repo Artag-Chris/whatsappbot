@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { BotServices } from "../services/bot.services";
 import { inWorkingHours } from "../../functions";
-import { envs } from "../../config/envs/envs";
+import { WhatsappOutgoingMessage } from "../../config/classes";
 export class BotController {
 
     constructor(
@@ -9,7 +9,7 @@ export class BotController {
     ) {}
 
     webhook=async(req: Request, res: Response)=>  {
-     
+      
       try{
           
         const payload = req.body;
@@ -38,17 +38,28 @@ export class BotController {
         const messageType=messages.type;
 
          if(!inWorkingHours()){
+          const {changes} = payload.entry?.[0];
+          const {value} = changes?.[0];
+          const {metadata, contacts, messages} = value
+          const {name} = contacts?.[0].profile
+          const {id,type}= messages?.[0]
+          const {body}= messages?.[0].text
+          const {display_phone_number,phone_number_id}= metadata
+      
+           
+          const phone = payload.entry?.[0].changes?.[0].value?.messages?.[0].from;
+          const notWorkingHours= new WhatsappOutgoingMessage( name,phone,body,type,id,body,display_phone_number,phone_number_id);
+          notWorkingHours.inNotWorkingHours();
            //mandara un un mensaje personalizado al usuario diciendo la hora de atencion y tambien guardara en la base de datos
-         return res.status(400).send("No se puede enviar el mensaje en este horario")
+         return 
         }
          
-        //TODO: funcion por si es la primera vez que hace contacto
-       
         switch(messageType) {
           case "text":
             console.log("text");
-            const text = this.botServices.onMessage(payload);
-            res.status(200).send(text);
+           // console.log(JSON.stringify(payload))
+           const text = this.botServices.onMessage(payload);
+            res.status(200).send("text");
             break;
           case "image":
             console.log("image");
@@ -73,6 +84,8 @@ export class BotController {
             break;
   
           default:
+            //aqui biene la funcion de mandar la plantilla a los nuevos usuarios por primera vez
+            //no devuelve un valor neto
             console.log("no paso el default")
             res.status(200).send("OK");
             break;
@@ -85,78 +98,7 @@ export class BotController {
 
     }
 
-
-
-
-
-
-           
-
-
-
-
-
-
-
-
-      
-      // if (inWorkingHours()) {
-      //   //crear mensaje por si es una imagen ,audio o video
-
-      //   if (message?.type === "text") {
-      //     // saca el numero de "business number" para mandar un reply
-      //     const business_phone_number_id =
-      //       req.body.entry?.[0].changes?.[0].value?.metadata?.phone_number_id;
-
-       
-      //       await axios({
-      //         method: "POST",
-      //         url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
-      //         headers: {
-      //           Authorization: `Bearer ${envs.GRAPH_API_TOKEN}`,
-      //         },
-      //         data: {
-      //           messaging_product: "whatsapp",
-      //           to: message.from,
-      //           text: {
-      //             body: "Su mensaje sera atendido pronto: " + message.text.body,
-      //           },
-      //           context: {
-      //             message_id: message.id, // shows the message as a reply to the original user message
-      //           },
-      //         },
-      //       });
-
-      //       // mark incoming message as read
-      //       await axios({
-      //         method: "POST",
-      //         url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
-      //         headers: {
-      //           Authorization: `Bearer ${envs.GRAPH_API_TOKEN}`,
-      //         },
-      //         data: {
-      //           messaging_product: "whatsapp",
-      //           status: "read",
-      //           message_id: message.id,
-      //         },
-      //       });
-      //     }
-
-      //     res.sendStatus(200);
-      //   } else {
-      //     //aqui se guardara el mensaje que no fue atendido en la base de datos para que despues los agentes lo lean
-      //     console.log("no fue atendido");
-      //   }
       }
     
+   // aqui estan los detalles de la documentacion sobre el payload: https://developers.facebook.com/docs/whatsapp/cloud-api/webhooks/payload-examples#text-messages
     
-
-
-    
-
-    //     // aqui estan los detalles de la documentacion sobre el payload: https://developers.facebook.com/docs/whatsapp/cloud-api/webhooks/payload-examples#text-messages
-    
-    
-        
-      
-    //   
