@@ -33,7 +33,7 @@ export class BotServices {
       return mensaje;
     }
    
-    
+   // console.log(phone, phone_number_id, id, body);
     const outgoing=new WhatsappOutgoingMessage(name,phone,body,type,id,body,display_phone_number,phone_number_id);
     outgoing.checkType()
   

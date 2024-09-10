@@ -59,7 +59,7 @@ export class BotController {
             console.log("text");
            // console.log(JSON.stringify(payload))
            const text = this.botServices.onMessage(payload);
-            res.status(200).send("text");
+            res.status(200).send(text);
             break;
           case "image":
             console.log("image");
