@@ -1,6 +1,7 @@
 import axios, { AxiosResponse } from "axios";
 import { envs } from "../config/envs/envs";
 import crypto from "crypto";
+import { header } from "../config/urls";
 
 const sentPayloads = new Set<string>();
 
@@ -18,7 +19,7 @@ export async function sendMessageToApi(payload: any): Promise<AxiosResponse<any>
     }
 
     try {
-        const response = await axios.post(apiUrl, payload);
+        const response = await axios.post(apiUrl, payload, { headers: header });
         console.log('Payload enviado a la API:', response.data);
         sentPayloads.add(payloadHash);
         return response;

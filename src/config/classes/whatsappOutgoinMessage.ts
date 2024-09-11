@@ -2,6 +2,8 @@ import axios, { AxiosResponse } from "axios";
 import { header } from "../urls";
 import { envs } from "../envs/envs";
 import { findMenu, handleMenuOption, sendMessageToApi } from "../../functions";
+import WebSocket from 'ws';
+
 export class WhatsappOutgoingMessage {
 
     constructor(
@@ -12,11 +14,16 @@ export class WhatsappOutgoingMessage {
         private readonly id: string,
         private readonly body: string,
         private readonly display_phone_number: string,
-        private readonly phone_number_id: string
-    ){}
+        private readonly phone_number_id: string,
+       
+    ){ 
+      
+    }
     
 
     async checkType(){
+      const ws = new WebSocket('ws://localhost:4000/ws');
+      
         const menu = findMenu(this.body);
 
         const payload={
@@ -33,7 +40,22 @@ export class WhatsappOutgoingMessage {
         if (menu) {
             handleMenuOption(menu, payload)
             this.sendMessageToMeta(menu)
-        }
+        }else{
+          ws.on('open', () => {
+            ws.send(JSON.stringify(payload));
+            console.log('Mensaje enviado al servidor WebSocket:', payload);
+        });
+        }ws.on('message', (data) => {
+          console.log('Mensaje recibido del servidor WebSocket:', data.toString());
+        });
+        ws.on('error', (error) => {
+        console.error('Error en el WebSocket:', error);
+        });
+        ws.on("close", () => {
+        console.log("Conexión WebSocket cerrada");
+        });
+
+        //implementar el ws aqui enviar a la api el payload por ws
    }
 
    async sendMessageToMeta(menu: string){

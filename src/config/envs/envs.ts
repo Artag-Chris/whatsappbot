@@ -12,5 +12,6 @@ export const envs={
     URLAUDIOROUTE:get('URLAUDIOROUTE').required().asString(),
     URLVIDEOROUTE:get('URLVIDEOROUTE').required().asString(),
     URLDOCROUTE:get('URLDOCROUTE').required().asString(),
+    WABA_ID:get('WABA_ID').required().asString(),
 }
   
