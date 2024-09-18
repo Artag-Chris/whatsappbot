@@ -3,7 +3,7 @@ import path from 'path';
 import axios from "axios";
 import { IncomingWhatsappDocument, IncomingWhatsappImage, IncomingWhatsappMessage, IncomingWhatsappVideo, IncomingWhatsappVoice, } from "../../config/interfaces";
 import { envs } from "../../config/envs/envs";
-import { audioExtention, documentExtention, findMenu, imageExtension,renameFile, videoExtention } from "../../functions";
+import { audioExtention, documentExtention, imageExtension,renameFile, videoExtention } from "../../functions";
 import { header } from "../../config/urls"
 import { WhatsappOutgoingAudio, WhatsappOutgoingDocument, WhatsappOutgoingImage, WhatsappOutgoingMessage, WhatsappOutgoingVideo } from "../../config/classes";
 
@@ -96,7 +96,6 @@ export class BotServices {
                 }
                 const base64Data = data.toString('base64');
                 const outgoingImage= new WhatsappOutgoingImage( name,from,display_phone_number,base64Data,type,id);
-                //console.log('Archivo convertido a Base64:', base64Data);
                 outgoingImage.sendToApi();
               })
             })           
