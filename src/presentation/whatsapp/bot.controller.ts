@@ -30,7 +30,7 @@ export class BotController {
         }
         const messages=value.messages[0];
         if (!messages.type) {
-         return res.status(400).send("Invalid payload: No message type found");
+         return res.status(400).send("no hay cuerpo de mensaje");
         }
         if(!messages){
           return res.status(400).send("mensaje invalido")
@@ -56,8 +56,6 @@ export class BotController {
          
         switch(messageType) {
           case "text":
-            console.log("text");
-           // console.log(JSON.stringify(payload))
            const text = this.botServices.onMessage(payload);
             res.status(200).send(text);
             break;
@@ -85,7 +83,6 @@ export class BotController {
   
           default:
             //aqui biene la funcion de mandar la plantilla a los nuevos usuarios por primera vez
-            //no devuelve un valor neto
             console.log("no paso el default")
             res.status(200).send("OK");
             break;
@@ -100,5 +97,5 @@ export class BotController {
 
       }
     
-   // aqui estan los detalles de la documentacion sobre el payload: https://developers.facebook.com/docs/whatsapp/cloud-api/webhooks/payload-examples#text-messages
+   
     

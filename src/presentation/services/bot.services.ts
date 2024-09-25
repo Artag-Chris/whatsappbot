@@ -33,7 +33,6 @@ export class BotServices {
       return mensaje;
     }
    
-   // console.log(phone, phone_number_id, id, body);
     const outgoing=new WhatsappOutgoingMessage(name,phone,body,type,id,body,display_phone_number,phone_number_id);
     outgoing.checkType()
   
@@ -66,8 +65,6 @@ export class BotServices {
       const fileUrl = metaResponse.data.url;
 
       const outputPath = path.join(__dirname, "../../../uploads", "File");
-
-      // Realizar la solicitud GET para descargar el archivo
      
       axios({
         method: "get",
@@ -88,7 +85,6 @@ export class BotServices {
                 console.error("Error al renombrar el archivo:", error);
               }
               const newPath= path.join(__dirname, "../../../uploads", renameFile!);
-              // Aquí puedes realizar acciones adicionales después de renombrar el archivo
               fs.readFile(newPath, (err, data) => {
                 if (err) {
                   console.error('Error al leer el archivo binario:', err);
@@ -217,9 +213,7 @@ export class BotServices {
       const fileUrl = metaResponse.data.url;
 
       const outputPath = path.join(__dirname, "../../../uploads", "File");
-
-      // Realizar la solicitud GET para descargar el archivo
-     
+   
       axios({
         method: "get",
         url: fileUrl,

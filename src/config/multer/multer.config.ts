@@ -1,7 +1,7 @@
 import multer from "multer";
 import path from 'path';
 import fs from 'fs';
-
+//queda pendiente o abierta la posibilidad de usar multer
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
