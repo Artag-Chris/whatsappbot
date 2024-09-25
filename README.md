@@ -44,6 +44,8 @@ Para iniciar el bot, ejecuta el siguiente comando:
  npm run dev
  
  aun no se ha creado la build de producción 
+ 
+Estructura del Proyecto 
 
  ├── src
  │   ├── app.ts                 # Punto de entrada del bot
