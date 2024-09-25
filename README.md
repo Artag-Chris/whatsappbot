@@ -46,8 +46,8 @@ Para iniciar el bot, ejecuta el siguiente comando:
  aun no se ha creado la build de producción 
 
  ├── src
-│   ├── app.ts                 # Punto de entrada del bot
-│   ├── config.ts                # Configuración del bot 
+ │   ├── app.ts                 # Punto de entrada del bot
+ │   ├── config.ts                # Configuración del bot 
           └──classes                # maneja las clases dependiendo del tipo del mensaje
           └──envs                   # adapta las variables de entorno 
           └──interfaces             # interfaces para el tipado extricto de typescript
@@ -55,14 +55,14 @@ Para iniciar el bot, ejecuta el siguiente comando:
           └──multer                 # configuracion de multer aun no implementada
           └──url                    # urls que usa el bot para notificar a la api
           └──websocket              # configuracion del websocket
-│   ├── functions                # funciones que usa el bot
-│   ├── presentation             # servicios del bot // services: logica del bot
-│        └──services                # Utilidades y funciones auxiliares
+ │   ├── functions                # funciones que usa el bot
+ │   ├── presentation             # servicios del bot // services: logica del bot
+ │        └──services                # Utilidades y funciones auxiliares
          └──whatsapp      
              └──bot.controller      # controladores del bot
-├── .env                       # Variables de entorno
-├── package.json               # Dependencias y scripts del proyecto
-└── tsconfig.json              # Configuración de TypeScript
+ ├── .env                       # Variables de entorno
+ ├── package.json               # Dependencias y scripts del proyecto
+ └── tsconfig.json              # Configuración de TypeScript
 
 Licencia
 pendiente
