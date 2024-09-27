@@ -4,7 +4,7 @@ import { BotController } from "./presentation/whatsapp/bot.controller";
 
 (async () => {
   main();
-})();
+})();  
 
 function main(){
   const app = express();
