@@ -6,7 +6,7 @@ class WebSocketServerWrapper {
     constructor(port: number) {
         this.wss = new WebSocketServer({ port });
         this.wss.on('connection', this.onConnection);
-        console.log(`Servidor WebSocket iniciado en ws://localhost:${port}`);
+       // se debe cambiar el localhost console.log(`Servidor WebSocket iniciado en ws://localhost:${port}`);
     }
 
     private onConnection(ws: WebSocket) {
