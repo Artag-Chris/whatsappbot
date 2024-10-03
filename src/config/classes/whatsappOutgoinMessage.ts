@@ -23,40 +23,39 @@ export class WhatsappOutgoingMessage {
 
     async checkType(){
       const ws = new WebSocket(`ws://${envs.URL_BASE}/ws`);
-      
-        const menu = findMenu(this.body);
-
-        const payload={
-            name: this.name,
-            phone: this.phone,
-            message: this.message,
-            type: this.type,
-            id: this.id,
-            body: this.body,
-            display_phone_number: this.display_phone_number,
-            phone_number_id:this.phone_number_id
-        }
-
-        if (menu) {
-            handleMenuOption(menu, payload)
-            this.sendMessageToMeta(menu)
-        }else{
-          ws.on('open', () => {
-            ws.send(JSON.stringify(payload));
-            console.log('Mensaje enviado al servidor WebSocket:', payload);
+      let respuestaAutomaticaEnviada = false;
+      const menu = findMenu(this.body);
+      const payload={
+        name: this.name,
+        phone: this.phone,
+        message: this.message,
+        type: this.type,
+        id: this.id,
+        body: this.body,
+        display_phone_number: this.display_phone_number,
+        phone_number_id:this.phone_number_id
+      }
+      if (menu) {
+        handleMenuOption(menu, payload)
+        this.sendMessageToMeta(menu)
+        respuestaAutomaticaEnviada = true;
+      }
+      if (!respuestaAutomaticaEnviada) {
+        ws.on('open', () => {
+          ws.send(JSON.stringify(payload));
+          console.log('Mensaje enviado al servidor WebSocket:', payload);
         });
-        }ws.on('message', (data) => {
-          console.log('Mensaje recibido del servidor WebSocket:', data.toString());
-        });
-        ws.on('error', (error) => {
+      }
+      ws.on('message', (data) => {
+        console.log('Mensaje recibido del servidor WebSocket:', data.toString());
+      });
+      ws.on('error', (error) => {
         console.error('Error en el WebSocket:', error);
-        });
-        ws.on("close", () => {
+      });
+      ws.on("close", () => {
         console.log("Conexión WebSocket cerrada");
-        });
-
-        //implementar el ws aqui enviar a la api el payload por ws
-   }
+      });
+    }
 
    async sendMessageToMeta(menu: string){
     const headers = header
@@ -64,6 +63,31 @@ export class WhatsappOutgoingMessage {
         messaging_product: "whatsapp",
         to: this.phone,
         text: { body: `Sera atendido prontamente en ${menu}` },
+      };
+      const statusData = {
+        messaging_product: "whatsapp",
+        status: "read",
+        message_id: this.id,
+      };
+    try{
+
+        await axios.post(`https://graph.facebook.com/${envs.Version}/${this.phone_number_id}/messages`, messageData, { headers });
+        await axios.post(`https://graph.facebook.com/${envs.Version}/${this.phone_number_id}/messages`, statusData, { headers });
+
+    }catch(error){
+        console.log(error)
+     }
+   }
+   async reSendMessage(){
+    const headers = header
+    const messageData = {
+        messaging_product: "whatsapp",
+        to: this.phone,
+        text: { body: `Bienvenido a nuestro servicio de atencion por favor escoja a continuacion algunas de nuestras opciones
+          1. atencion al cliente
+          2. solicitar prestamo
+          3. cartera o juridica
+          4 contabilidad. ` },
       };
       const statusData = {
         messaging_product: "whatsapp",

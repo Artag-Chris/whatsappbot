@@ -27,7 +27,7 @@ export class BotServices {
 
      
     const phone = payload.entry?.[0].changes?.[0].value?.messages?.[0].from;
-    
+   
     if (!phone || !phone_number_id || !id || !body) {
       console.error("Missing required data from payload");
       return mensaje;

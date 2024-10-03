@@ -10,9 +10,9 @@ function main(){
   const app = express();
   app.use(express.json());
   const controller = new BotController();
-  app.post("/webhook",controller.webhook);
+  app.post("/web",controller.webhook);
   
-  app.get("/webhook", (req, res) => {
+  app.get("/web", (req, res) => {
     const mode = req.query["hub.mode"];
     const token = req.query["hub.verify_token"];
     const challenge = req.query["hub.challenge"];

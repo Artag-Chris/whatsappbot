@@ -13,6 +13,7 @@ export class BotController {
       try{
           
         const payload = req.body;
+        
         if (!payload.entry || !Array.isArray(payload.entry) || payload.entry.length === 0) {
           return res.status(400).send("Invalid payload: No entry found");
         }
@@ -36,6 +37,7 @@ export class BotController {
           return res.status(400).send("mensaje invalido")
         }
         const messageType=messages.type;
+        //console.log(payload.entry[0].changes[0].value.messages[0].text.body);
 
          if(!inWorkingHours()){
           const {changes} = payload.entry?.[0];
@@ -46,14 +48,14 @@ export class BotController {
           const {body}= messages?.[0].text
           const {display_phone_number,phone_number_id}= metadata
       
-           
+           console.log(`en inWorkingHours`)
           const phone = payload.entry?.[0].changes?.[0].value?.messages?.[0].from;
           const notWorkingHours= new WhatsappOutgoingMessage( name,phone,body,type,id,body,display_phone_number,phone_number_id);
           notWorkingHours.inNotWorkingHours();
            //mandara un un mensaje personalizado al usuario diciendo la hora de atencion y tambien guardara en la base de datos
          return 
         }
-         
+        console.log(messageType) 
         switch(messageType) {
           case "text":
            const text = this.botServices.onMessage(payload);
