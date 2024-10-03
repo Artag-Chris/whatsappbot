@@ -3,9 +3,10 @@ import { header } from "../urls";
 import { envs } from "../envs/envs";
 import { findMenu, handleMenuOption, sendMessageToApi } from "../../functions";
 import WebSocket from 'ws';
-
+const welcomeMessagesSent: { [phone: string]: boolean } = {};
+ 
 export class WhatsappOutgoingMessage {
-
+  private hasSentWelcomeMessage = false;
     constructor(
         private readonly name: string | undefined,
         private readonly phone: string,
@@ -20,43 +21,54 @@ export class WhatsappOutgoingMessage {
       
     }
     
-
-    async checkType(){
-      const ws = new WebSocket(`ws://${envs.URL_BASE}/ws`);
-      let respuestaAutomaticaEnviada = false;
+    async checkType() {
       const menu = findMenu(this.body);
-      const payload={
-        name: this.name,
-        phone: this.phone,
-        message: this.message,
-        type: this.type,
-        id: this.id,
-        body: this.body,
-        display_phone_number: this.display_phone_number,
-        phone_number_id:this.phone_number_id
-      }
-      if (menu) {
-        handleMenuOption(menu, payload)
-        this.sendMessageToMeta(menu)
-        respuestaAutomaticaEnviada = true;
-      }
-      if (!respuestaAutomaticaEnviada) {
+    
+      if (!menu && !welcomeMessagesSent[this.phone]) {
+        // Si no es la primera vez y no pasa el filtro, envíe el template de bienvenida
+        await this.reSendMessage();
+         welcomeMessagesSent[this.phone] = true;
+      } else if (menu) {
+        // Si pasa el filtro, maneje la opción del menú
+        handleMenuOption(menu, {
+          name: this.name,
+          phone: this.phone,
+          message: this.message,
+          type: this.type,
+          id: this.id,
+          body: this.body,
+          display_phone_number: this.display_phone_number,
+          phone_number_id: this.phone_number_id,
+        });
+        this.sendMessageToMeta(menu);
+      } else {
+        // Si no es la primera vez y no pasa el filtro, envíe el mensaje utilizando el WebSocket
+        const ws = new WebSocket(`ws://${envs.URL_BASE}/ws`);
+        const payload = {
+          name: this.name,
+          phone: this.phone,
+          message: this.message,
+          type: this.type,
+          id: this.id,
+          body: this.body,
+          display_phone_number: this.display_phone_number,
+          phone_number_id: this.phone_number_id,
+        };
         ws.on('open', () => {
           ws.send(JSON.stringify(payload));
-          console.log('Mensaje enviado al servidor WebSocket:', payload);
+          console.log(`Mensaje enviado de ${this.phone} al servidor ${payload.message}`, );
+        });
+        ws.on('message', (data) => {
+          console.log('Mensaje recibido del servidor WebSocket:');
+        });
+        ws.on('error', (error) => {
+          console.error('Error en el WebSocket:', error);
+        });
+        ws.on("close", () => {
+          console.log("Conexión WebSocket cerrada");
         });
       }
-      ws.on('message', (data) => {
-        console.log('Mensaje recibido del servidor WebSocket:', data.toString());
-      });
-      ws.on('error', (error) => {
-        console.error('Error en el WebSocket:', error);
-      });
-      ws.on("close", () => {
-        console.log("Conexión WebSocket cerrada");
-      });
     }
-
    async sendMessageToMeta(menu: string){
     const headers = header
     const messageData = {
