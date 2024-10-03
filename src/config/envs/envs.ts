@@ -13,5 +13,6 @@ export const envs={
     URLVIDEOROUTE:get('URLVIDEOROUTE').required().asString(),
     URLDOCROUTE:get('URLDOCROUTE').required().asString(),
     WABA_ID:get('WABA_ID').required().asString(),
+    URL_BASE:get('URL_BASE').required().asString(), 
 }
   

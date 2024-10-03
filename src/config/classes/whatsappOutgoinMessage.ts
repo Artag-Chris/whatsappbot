@@ -22,7 +22,7 @@ export class WhatsappOutgoingMessage {
     
 
     async checkType(){
-      const ws = new WebSocket('ws://localhost:4000/ws');
+      const ws = new WebSocket(`ws://${envs.URL_BASE}/ws`);
       
         const menu = findMenu(this.body);
 
