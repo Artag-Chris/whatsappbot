@@ -37,7 +37,7 @@ export class BotController {
           return res.status(400).send("mensaje invalido")
         }
         const messageType=messages.type;
-        //console.log(payload.entry[0].changes[0].value.messages[0].text.body);
+        
 
          if(!inWorkingHours()){
           const {changes} = payload.entry?.[0];
@@ -55,7 +55,7 @@ export class BotController {
            //mandara un un mensaje personalizado al usuario diciendo la hora de atencion y tambien guardara en la base de datos
          return 
         }
-        console.log(messageType) 
+        
         switch(messageType) {
           case "text":
            const text = this.botServices.onMessage(payload);
@@ -85,7 +85,16 @@ export class BotController {
   
           default:
             //aqui biene la funcion de mandar la plantilla a los nuevos usuarios por primera vez
-            console.log("no paso el default")
+            const {changes} = payload.entry?.[0];
+            const {value} = changes?.[0];
+            const {metadata, contacts, messages} = value
+            const {name} = contacts?.[0].profile
+            const {id,type}= messages?.[0]
+            const {body}= messages?.[0].text
+            const {display_phone_number,phone_number_id}= metadata
+            const phone = payload.entry?.[0].changes?.[0].value?.messages?.[0].from;
+            const firstTimeMessage= new WhatsappOutgoingMessage( name,phone,body,type,id,body,display_phone_number,phone_number_id);
+           firstTimeMessage.inNotWorkingHours();
             res.status(200).send("OK");
             break;
         }
