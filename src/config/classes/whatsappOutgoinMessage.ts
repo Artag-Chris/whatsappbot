@@ -30,6 +30,7 @@ export class WhatsappOutgoingMessage {
          welcomeMessagesSent[this.phone] = true;
       } else if (menu) {
         // Si pasa el filtro, maneje la opción del menú
+        const ws = new WebSocket(`ws://${envs.URL_BASE}/ws`);
         handleMenuOption(menu, {
           name: this.name,
           phone: this.phone,
@@ -41,6 +42,24 @@ export class WhatsappOutgoingMessage {
           phone_number_id: this.phone_number_id,
         });
         this.sendMessageToMeta(menu);
+        const payload = {
+          name: this.name,
+          phone: this.phone,
+          message: this.message,
+          type: this.type,
+          id: this.id,
+          body: this.body,
+          display_phone_number: this.display_phone_number,
+          phone_number_id: this.phone_number_id,
+        };
+        ws.on('open', () => {
+          ws.send(JSON.stringify(payload));
+          console.log(`Mensaje enviado de ${this.phone} al servidor ${payload.message}`, );
+        });
+       
+        ws.on("close", () => {
+          console.log("Conexión WebSocket cerrada");
+        });
       } else {
         // Si no es la primera vez y no pasa el filtro, envíe el mensaje utilizando el WebSocket
         const ws = new WebSocket(`ws://${envs.URL_BASE}/ws`);
