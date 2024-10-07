@@ -3,8 +3,8 @@ import { header } from "../urls";
 import { envs } from "../envs/envs";
 import { findMenu, handleMenuOption, sendMessageToApi } from "../../functions";
 import WebSocket from 'ws';
-const welcomeMessagesSent: { [phone: string]: boolean } = {};
- 
+
+const welcomeMessagesSent: { [phone: string]: boolean } = {}; 
 export class WhatsappOutgoingMessage {
   private hasSentWelcomeMessage = false;
     constructor(
@@ -66,17 +66,7 @@ export class WhatsappOutgoingMessage {
         });
       } else {
         // Si no es la primera vez y no pasa el filtro, envíe el mensaje utilizando el WebSocket
-        const ws = new WebSocket(`ws://${envs.URL_BASE}/ws`);
-        const payload = {
-          name: this.name,
-          phone: this.phone,
-          message: this.message,
-          type: this.type,
-          id: this.id,
-          body: this.body,
-          display_phone_number: this.display_phone_number,
-          phone_number_id: this.phone_number_id,
-        };
+       
         ws.on('open', () => {
           ws.send(JSON.stringify(payload));
           console.log(`Mensaje enviado de ${this.phone} al servidor ${payload.message}`, );
@@ -118,7 +108,9 @@ export class WhatsappOutgoingMessage {
     const messageData = {
         messaging_product: "whatsapp",
         to: this.phone,
-        text: { body: `Bienvenido a nuestro servicio de atencion por favor escoja a continuacion algunas de nuestras opciones
+        //esto se cambiara segun necesidad
+        text: { body: 
+          `Bienvenido a nuestro servicio de atencion por favor escoja a continuacion algunas de nuestras opciones
           1. atencion al cliente
           2. solicitar prestamo
           3. cartera o juridica
@@ -145,11 +137,6 @@ export class WhatsappOutgoingMessage {
         messaging_product: "whatsapp",
         to: this.phone,
         text: { body: `Sera atendido prontamente en horas habiles de lunes a viernes de 8:00 am a 5:00 pm y sabado de 9:00 am a 1:00 pm` },
-      };
-      const statusData = {
-        messaging_product: "whatsapp",
-        status: "read",
-        message_id: this.id,
       };
 
       const payload={
