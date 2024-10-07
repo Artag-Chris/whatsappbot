@@ -22,15 +22,28 @@ export class WhatsappOutgoingMessage {
     }
     
     async checkType() {
+      const ws = new WebSocket(`ws://${envs.URL_BASE}/ws`);
+      const payload = {
+        name: this.name,
+        phone: this.phone,
+        message: this.message,
+        type: this.type,
+        id: this.id,
+        body: this.body,
+        display_phone_number: this.display_phone_number,
+        phone_number_id: this.phone_number_id,
+      };
       const menu = findMenu(this.body);
     
       if (!menu && !welcomeMessagesSent[this.phone]) {
         // Si no es la primera vez y no pasa el filtro, envíe el template de bienvenida
         await this.reSendMessage();
          welcomeMessagesSent[this.phone] = true;
+         ws.send(JSON.stringify(payload));
+
       } else if (menu) {
         // Si pasa el filtro, maneje la opción del menú
-        const ws = new WebSocket(`ws://${envs.URL_BASE}/ws`);
+        
         handleMenuOption(menu, {
           name: this.name,
           phone: this.phone,
@@ -42,16 +55,7 @@ export class WhatsappOutgoingMessage {
           phone_number_id: this.phone_number_id,
         });
         this.sendMessageToMeta(menu);
-        const payload = {
-          name: this.name,
-          phone: this.phone,
-          message: this.message,
-          type: this.type,
-          id: this.id,
-          body: this.body,
-          display_phone_number: this.display_phone_number,
-          phone_number_id: this.phone_number_id,
-        };
+        
         ws.on('open', () => {
           ws.send(JSON.stringify(payload));
           console.log(`Mensaje enviado de ${this.phone} al servidor ${payload.message}`, );
