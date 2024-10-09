@@ -14,7 +14,7 @@ export class BotServices {
   constructor() {}
   
   async onMessage(payload: IncomingWhatsappMessage): Promise<string> {
-
+console.log(`Payload recibido: ${JSON.stringify(payload)}`);
   //TODO implementar funcion que reconosca si es el primer mensaje para mandarle una planilla personalizada
     let mensaje = "hola mundo";
     const {changes} = payload.entry?.[0];
