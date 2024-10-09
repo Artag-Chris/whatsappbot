@@ -20,7 +20,6 @@ export class WhatsappOutgoingMessage {
     ){ 
       
     }
-    
     async checkType() {
       const ws = new WebSocket(`ws://${envs.URL_BASE}/ws`);
       const payload = {
