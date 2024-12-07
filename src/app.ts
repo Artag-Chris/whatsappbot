@@ -10,9 +10,9 @@ function main(){
   const app = express();
   app.use(express.json());
   const controller = new BotController();
-  app.post("/web",controller.webhook);
+  app.post("/ws",controller.webhook);
   
-  app.get("/web", (req, res) => {
+  app.get("/ws", (req, res) => {
     const mode = req.query["hub.mode"];
     const token = req.query["hub.verify_token"];
     const challenge = req.query["hub.challenge"];
@@ -28,7 +28,7 @@ function main(){
   });
     
   app.get("/", (req, res) => {
-    res.send(`<pre>Nothing to see here.
+    res.send(`<pre>Nada que ver aqui.
   Checkout README.md to start.</pre>`);
   });
   

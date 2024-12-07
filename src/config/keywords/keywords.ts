@@ -56,6 +56,4 @@ export const keywords = {
         'registros contables',
         'retiro',
       ],
-
-
 }
