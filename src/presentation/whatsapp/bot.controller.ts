@@ -12,9 +12,7 @@ export class BotController {
   webhook = async (req: Request, res: Response) => {
 
     try {
-
       const payload = req.body;
-
       if (!payload.entry || !Array.isArray(payload.entry) || payload.entry.length === 0) {
         return res.status(400).send("Invalid payload: No entry found");
       }
@@ -38,8 +36,6 @@ export class BotController {
         return res.status(400).send("mensaje invalido")
       }
       const messageType = messages.type;
-
-
       if (!inWorkingHours()) {
         const { changes } = payload.entry?.[0];
         const { value } = changes?.[0];

@@ -1,6 +1,7 @@
 import axios, { AxiosResponse } from "axios";
 import { header } from "../urls";
 import { envs } from "../envs/envs";
+import logger from "../adapters/winstonAdapter";
 export class WhatsappOutgoingAudio {
     constructor(
         private readonly name: string | undefined,
@@ -26,11 +27,12 @@ export class WhatsappOutgoingAudio {
         try {
           const response = await axios.post(apiUrl, payload, { headers });
           return response;
-        } catch (error) {
-          console.error("Error al enviar los datos a la API:", error);
+        } catch (error:any) {
+          logger.error("Error al enviar los datos a la API:", error.message);
+
           throw error;
         } finally {
-          console.log("Audio sended to api");
+          logger.info("Datos enviados a la API");
         }
       }
 }

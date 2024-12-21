@@ -1,6 +1,7 @@
 import axios, { AxiosResponse } from "axios";
 import { header } from "../urls";
 import { envs } from "../envs/envs";
+import logger from "../adapters/winstonAdapter";
 
 export class WhatsappOutgoingImage {
   constructor(
@@ -27,11 +28,12 @@ export class WhatsappOutgoingImage {
     try {
       const response = await axios.post(apiUrl, payload, { headers });
       return response;
-    } catch (error) {
-      console.error("Error al enviar los datos a la API:", error);
+    } catch (error:any) {
+      logger.error("Error al enviar los datos a la API:", error.message);
+ 
       throw error;
     } finally {
-      console.log("Imagen sended to api");
+      logger.info("Datos de una imagen enviados a la API");
     }
   }
 }

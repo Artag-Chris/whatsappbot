@@ -2,6 +2,7 @@ import axios, { AxiosResponse } from "axios";
 import { envs } from "../config/envs/envs";
 import crypto from "crypto";
 import { header } from "../config/urls";
+import logger from "../config/adapters/winstonAdapter";
 
 const sentPayloads = new Set<string>();
 
@@ -14,20 +15,21 @@ export async function sendMessageToApi(payload: any): Promise<AxiosResponse<any>
     const payloadHash = hashPayload(payload);
 
     if (sentPayloads.has(payloadHash)) {
-        console.log('Payload ya enviado anteriormente:', payload);
+        logger.error('Payload ya enviado anteriormente:', payload);
         throw new Error('Payload ya enviado anteriormente');
     }
 
     try {
         const response = await axios.post(apiUrl, payload, { headers: header });
-        console.log('Payload enviado a la API:', response.data);
+
+        logger.info('Mensaje enviado a la API:', response.data);
         sentPayloads.add(payloadHash);
         return response;
-    } catch (error) {
+    } catch (error:any) {
         if (axios.isAxiosError(error)) {
-            console.error('Error al enviar el payload:', error.response?.data || error.message);
+            logger.error('Error al enviar el payload:', error.response?.data);
         } else {
-            console.error('Error desconocido al enviar el payload:', error);
+            logger.error('Error al enviar el payload:', error.message);
         }
         throw error;
     }
