@@ -7,15 +7,12 @@ import { audioExtention, documentExtention, imageExtension,renameFile, videoExte
 import { header } from "../../config/urls"
 import { WhatsappOutgoingAudio, WhatsappOutgoingDocument, WhatsappOutgoingImage, WhatsappOutgoingMessage, WhatsappOutgoingVideo } from "../../config/classes";
 
-
-
-
 export class BotServices {
   constructor() {}
   
   async onMessage(payload: IncomingWhatsappMessage): Promise<string> {
-console.log(`Payload recibido: ${JSON.stringify(payload)}`);
-  //TODO implementar funcion que reconosca si es el primer mensaje para mandarle una planilla personalizada
+  console.log(`Payload recibido: ${JSON.stringify(payload)}`);
+ 
     let mensaje = "hola mundo";
     const {changes} = payload.entry?.[0];
     const {value} = changes?.[0];

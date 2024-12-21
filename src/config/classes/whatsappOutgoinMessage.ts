@@ -1,8 +1,9 @@
-import axios, { AxiosResponse } from "axios";
+import axios from "axios";
 import { header } from "../urls";
 import { envs } from "../envs/envs";
 import { findMenu, handleMenuOption, sendMessageToApi } from "../../functions";
 import WebSocket from 'ws';
+import logger from "../adapters/winstonAdapter";
 
 const welcomeMessagesSent: { [phone: string]: boolean } = {}; 
 export class WhatsappOutgoingMessage {
@@ -57,27 +58,21 @@ export class WhatsappOutgoingMessage {
         
         ws.on('open', () => {
           ws.send(JSON.stringify(payload));
-          console.log(`Mensaje enviado de ${this.phone} al servidor ${payload.message}`, );
         });
        
         ws.on("close", () => {
-          console.log("Conexión WebSocket cerrada");
         });
       } else {
         // Si no es la primera vez y no pasa el filtro, envíe el mensaje utilizando el WebSocket
        
         ws.on('open', () => {
           ws.send(JSON.stringify(payload));
-          console.log(`Mensaje enviado de ${this.phone} al servidor ${payload.message}`, );
         });
         ws.on('message', (data) => {
-          console.log('Mensaje recibido del servidor WebSocket:');
         });
         ws.on('error', (error) => {
-          console.error('Error en el WebSocket:', error);
         });
         ws.on("close", () => {
-          console.log("Conexión WebSocket cerrada");
         });
       }
     }
@@ -98,8 +93,8 @@ export class WhatsappOutgoingMessage {
         await axios.post(`https://graph.facebook.com/${envs.Version}/${this.phone_number_id}/messages`, messageData, { headers });
         await axios.post(`https://graph.facebook.com/${envs.Version}/${this.phone_number_id}/messages`, statusData, { headers });
 
-    }catch(error){
-        console.log(error)
+    }catch(error:any){
+      logger.error("Error enviando mensaje al usuario", error.message)
      }
    }
    async reSendMessage(){
@@ -125,8 +120,8 @@ export class WhatsappOutgoingMessage {
         await axios.post(`https://graph.facebook.com/${envs.Version}/${this.phone_number_id}/messages`, messageData, { headers });
         await axios.post(`https://graph.facebook.com/${envs.Version}/${this.phone_number_id}/messages`, statusData, { headers });
 
-    }catch(error){
-        console.log(error)
+    }catch(error:any){
+      logger.error("Error enviando la plantilla de primera vez al usuario", error.message)
      }
    }
 
@@ -157,10 +152,9 @@ export class WhatsappOutgoingMessage {
         );
          sendMessageToApi(payload)
 
-      }catch(error){
-        console.log(error)}
-
-
+      }catch(error:any){
+        logger.error("Error en InNotWorkingHours", error.message)
+      }
    }
 
 }
