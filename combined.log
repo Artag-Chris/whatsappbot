@@ -1,0 +1,1047 @@
+2024-12-21T16:50:40.620Z error: TypeError: Cannot destructure property 'body' of '(intermediate value)(intermediate value)(intermediate value)' as it is undefined.
+    at BotController.<anonymous> (/home/node/app/src/presentation/whatsapp/bot.controller.ts:83:19)
+    at Generator.next (<anonymous>)
+    at /home/node/app/src/presentation/whatsapp/bot.controller.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/node/app/src/presentation/whatsapp/bot.controller.ts:4:12)
+    at BotController.webhook (/home/node/app/src/presentation/whatsapp/bot.controller.ts:12:51)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/node/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/node/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+2024-12-21T16:50:44.188Z info: Mensaje enviado a la API:
+2024-12-21T16:50:44.190Z info: Mensaje enviado a customerService
+2024-12-21T16:50:58.366Z info: Mensaje enviado a la API:
+2024-12-21T16:50:58.368Z info: Mensaje enviado a customerService
+2024-12-21T16:51:24.444Z error: TypeError: Cannot destructure property 'body' of '(intermediate value)(intermediate value)(intermediate value)' as it is undefined.
+    at BotController.<anonymous> (/home/node/app/src/presentation/whatsapp/bot.controller.ts:83:19)
+    at Generator.next (<anonymous>)
+    at /home/node/app/src/presentation/whatsapp/bot.controller.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/node/app/src/presentation/whatsapp/bot.controller.ts:4:12)
+    at BotController.webhook (/home/node/app/src/presentation/whatsapp/bot.controller.ts:12:51)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/node/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/node/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+2024-12-21T16:52:41.815Z info: Datos enviados a la API
+2024-12-21T17:37:29.606Z info: Mensaje enviado a la API:
+2024-12-21T17:37:29.607Z info: Mensaje enviado a customerService
+2024-12-21T18:57:05.820Z info: Mensaje enviado a la API:
+2024-12-21T18:57:06.863Z error: TypeError: Cannot destructure property 'body' of '(intermediate value)(intermediate value)(intermediate value)' as it is undefined.
+    at BotController.<anonymous> (/home/node/app/src/presentation/whatsapp/bot.controller.ts:45:17)
+    at Generator.next (<anonymous>)
+    at /home/node/app/src/presentation/whatsapp/bot.controller.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/node/app/src/presentation/whatsapp/bot.controller.ts:4:12)
+    at BotController.webhook (/home/node/app/src/presentation/whatsapp/bot.controller.ts:12:51)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/node/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/node/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+2024-12-21T19:17:38.137Z info: Mensaje enviado a la API:
+2024-12-21T20:22:18.232Z error: TypeError: Cannot destructure property 'body' of '(intermediate value)(intermediate value)(intermediate value)' as it is undefined.
+    at BotController.<anonymous> (/home/node/app/src/presentation/whatsapp/bot.controller.ts:45:17)
+    at Generator.next (<anonymous>)
+    at /home/node/app/src/presentation/whatsapp/bot.controller.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/node/app/src/presentation/whatsapp/bot.controller.ts:4:12)
+    at BotController.webhook (/home/node/app/src/presentation/whatsapp/bot.controller.ts:12:51)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/node/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/node/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+2024-12-21T20:22:18.725Z error: TypeError: Cannot destructure property 'body' of '(intermediate value)(intermediate value)(intermediate value)' as it is undefined.
+    at BotController.<anonymous> (/home/node/app/src/presentation/whatsapp/bot.controller.ts:45:17)
+    at Generator.next (<anonymous>)
+    at /home/node/app/src/presentation/whatsapp/bot.controller.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/node/app/src/presentation/whatsapp/bot.controller.ts:4:12)
+    at BotController.webhook (/home/node/app/src/presentation/whatsapp/bot.controller.ts:12:51)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/node/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/node/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+2024-12-21T20:22:20.536Z error: TypeError: Cannot destructure property 'body' of '(intermediate value)(intermediate value)(intermediate value)' as it is undefined.
+    at BotController.<anonymous> (/home/node/app/src/presentation/whatsapp/bot.controller.ts:45:17)
+    at Generator.next (<anonymous>)
+    at /home/node/app/src/presentation/whatsapp/bot.controller.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/node/app/src/presentation/whatsapp/bot.controller.ts:4:12)
+    at BotController.webhook (/home/node/app/src/presentation/whatsapp/bot.controller.ts:12:51)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/node/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/node/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+2024-12-21T20:22:45.451Z error: TypeError: Cannot destructure property 'body' of '(intermediate value)(intermediate value)(intermediate value)' as it is undefined.
+    at BotController.<anonymous> (/home/node/app/src/presentation/whatsapp/bot.controller.ts:45:17)
+    at Generator.next (<anonymous>)
+    at /home/node/app/src/presentation/whatsapp/bot.controller.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/node/app/src/presentation/whatsapp/bot.controller.ts:4:12)
+    at BotController.webhook (/home/node/app/src/presentation/whatsapp/bot.controller.ts:12:51)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/node/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/node/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+2024-12-21T20:29:03.321Z error: TypeError: Cannot destructure property 'body' of '(intermediate value)(intermediate value)(intermediate value)' as it is undefined.
+    at BotController.<anonymous> (/home/node/app/src/presentation/whatsapp/bot.controller.ts:45:17)
+    at Generator.next (<anonymous>)
+    at /home/node/app/src/presentation/whatsapp/bot.controller.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/node/app/src/presentation/whatsapp/bot.controller.ts:4:12)
+    at BotController.webhook (/home/node/app/src/presentation/whatsapp/bot.controller.ts:12:51)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/node/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/node/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+2024-12-21T21:56:01.663Z error: TypeError: Cannot destructure property 'body' of '(intermediate value)(intermediate value)(intermediate value)' as it is undefined.
+    at BotController.<anonymous> (/home/node/app/src/presentation/whatsapp/bot.controller.ts:45:17)
+    at Generator.next (<anonymous>)
+    at /home/node/app/src/presentation/whatsapp/bot.controller.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/node/app/src/presentation/whatsapp/bot.controller.ts:4:12)
+    at BotController.webhook (/home/node/app/src/presentation/whatsapp/bot.controller.ts:12:51)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/node/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/node/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+2024-12-21T21:56:02.092Z error: TypeError: Cannot destructure property 'body' of '(intermediate value)(intermediate value)(intermediate value)' as it is undefined.
+    at BotController.<anonymous> (/home/node/app/src/presentation/whatsapp/bot.controller.ts:45:17)
+    at Generator.next (<anonymous>)
+    at /home/node/app/src/presentation/whatsapp/bot.controller.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/node/app/src/presentation/whatsapp/bot.controller.ts:4:12)
+    at BotController.webhook (/home/node/app/src/presentation/whatsapp/bot.controller.ts:12:51)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/node/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/node/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+2024-12-21T21:56:04.033Z error: TypeError: Cannot destructure property 'body' of '(intermediate value)(intermediate value)(intermediate value)' as it is undefined.
+    at BotController.<anonymous> (/home/node/app/src/presentation/whatsapp/bot.controller.ts:45:17)
+    at Generator.next (<anonymous>)
+    at /home/node/app/src/presentation/whatsapp/bot.controller.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/node/app/src/presentation/whatsapp/bot.controller.ts:4:12)
+    at BotController.webhook (/home/node/app/src/presentation/whatsapp/bot.controller.ts:12:51)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/node/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/node/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+2024-12-21T21:56:30.940Z error: TypeError: Cannot destructure property 'body' of '(intermediate value)(intermediate value)(intermediate value)' as it is undefined.
+    at BotController.<anonymous> (/home/node/app/src/presentation/whatsapp/bot.controller.ts:45:17)
+    at Generator.next (<anonymous>)
+    at /home/node/app/src/presentation/whatsapp/bot.controller.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/node/app/src/presentation/whatsapp/bot.controller.ts:4:12)
+    at BotController.webhook (/home/node/app/src/presentation/whatsapp/bot.controller.ts:12:51)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/node/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/node/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+2024-12-21T22:02:21.069Z info: Mensaje enviado a la API:
+2024-12-21T22:02:45.848Z error: Porq yo pagué la de nobiembre
+2024-12-23T16:08:59.227Z info: Datos de una imagen enviados a la API
+2024-12-23T16:11:01.061Z info: Mensaje enviado a la API:
+2024-12-23T16:11:01.061Z info: Mensaje enviado a customerService
+2024-12-23T16:11:01.591Z info: Datos de una imagen enviados a la API
+2024-12-23T16:24:30.728Z info: Mensaje enviado a la API:
+2024-12-23T16:24:30.729Z info: Mensaje enviado a customerService
+2024-12-23T16:29:47.155Z info: Mensaje enviado a la API:
+2024-12-23T16:29:47.156Z info: Mensaje enviado a customerService
+2024-12-23T18:26:20.635Z info: Mensaje enviado a la API:
+2024-12-23T18:26:20.639Z info: Mensaje enviado a customerService
+2024-12-23T18:36:05.937Z info: Mensaje enviado a la API:
+2024-12-23T18:36:05.937Z info: Mensaje enviado a customerService
+2024-12-23T18:36:09.643Z info: Mensaje enviado a la API:
+2024-12-23T18:36:09.643Z info: Mensaje enviado a customerService
+2024-12-23T18:38:01.918Z info: Mensaje enviado a la API:
+2024-12-23T18:38:01.918Z info: Mensaje enviado a customerService
+2024-12-23T18:38:23.117Z info: Datos de una imagen enviados a la API
+2024-12-23T18:39:04.017Z info: Mensaje enviado a la API:
+2024-12-23T18:39:04.017Z info: Mensaje enviado a customerService
+2024-12-23T18:40:36.637Z info: Mensaje enviado a la API:
+2024-12-23T18:40:36.638Z info: Mensaje enviado a customerService
+2024-12-23T18:42:24.085Z info: Mensaje enviado a la API:
+2024-12-23T18:42:24.085Z info: Mensaje enviado a customerService
+2024-12-23T18:44:35.249Z info: Mensaje enviado a la API:
+2024-12-23T18:44:35.249Z info: Mensaje enviado a customerService
+2024-12-23T18:46:31.266Z info: Mensaje enviado a la API:
+2024-12-23T18:46:31.266Z info: Mensaje enviado a customerService
+2024-12-23T19:20:56.449Z info: Mensaje enviado a la API:
+2024-12-23T19:20:56.450Z info: Mensaje enviado a customerService
+2024-12-23T19:40:20.033Z info: Mensaje enviado a la API:
+2024-12-23T19:40:20.034Z info: Mensaje enviado a customerService
+2024-12-23T19:42:38.326Z info: Mensaje enviado a la API:
+2024-12-23T19:42:38.327Z info: Mensaje enviado a customerService
+2024-12-23T21:00:08.982Z info: Mensaje enviado a la API:
+2024-12-23T21:00:08.982Z info: Mensaje enviado a customerService
+2024-12-23T21:33:15.964Z info: Mensaje enviado a la API:
+2024-12-23T21:33:15.965Z info: Mensaje enviado a customerService
+2024-12-23T21:34:40.329Z info: Mensaje enviado a la API:
+2024-12-23T21:34:40.329Z info: Mensaje enviado a customerService
+2024-12-23T21:38:53.238Z info: Datos de una imagen enviados a la API
+2024-12-23T21:58:00.645Z info: Mensaje enviado a la API:
+2024-12-23T21:58:00.645Z info: Mensaje enviado a customerService
+2024-12-23T22:00:11.477Z info: Mensaje enviado a la API:
+2024-12-23T22:01:12.619Z info: Mensaje enviado a la API:
+2024-12-23T22:07:51.030Z info: Mensaje enviado a la API:
+2024-12-23T22:15:07.049Z error: TypeError: Cannot destructure property 'body' of '(intermediate value)(intermediate value)(intermediate value)' as it is undefined.
+    at BotController.<anonymous> (/home/node/app/src/presentation/whatsapp/bot.controller.ts:45:17)
+    at Generator.next (<anonymous>)
+    at /home/node/app/src/presentation/whatsapp/bot.controller.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/node/app/src/presentation/whatsapp/bot.controller.ts:4:12)
+    at BotController.webhook (/home/node/app/src/presentation/whatsapp/bot.controller.ts:12:51)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/node/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/node/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+2024-12-23T22:15:21.285Z info: Mensaje enviado a la API:
+2024-12-23T22:18:44.446Z info: Mensaje enviado a la API:
+2024-12-23T22:18:56.532Z info: Mensaje enviado a la API:
+2024-12-24T01:08:59.573Z info: Mensaje enviado a la API:
+2024-12-24T02:50:39.442Z error: TypeError: Cannot destructure property 'body' of '(intermediate value)(intermediate value)(intermediate value)' as it is undefined.
+    at BotController.<anonymous> (/home/node/app/src/presentation/whatsapp/bot.controller.ts:45:17)
+    at Generator.next (<anonymous>)
+    at /home/node/app/src/presentation/whatsapp/bot.controller.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/node/app/src/presentation/whatsapp/bot.controller.ts:4:12)
+    at BotController.webhook (/home/node/app/src/presentation/whatsapp/bot.controller.ts:12:51)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/node/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/node/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+2024-12-24T04:30:30.755Z info: Mensaje enviado a la API:
+2024-12-24T20:06:45.119Z info: Mensaje enviado a la API:
+2024-12-24T20:06:45.119Z info: Mensaje enviado a customerService
+2024-12-25T03:42:09.029Z info: Mensaje enviado a la API:
+2024-12-25T03:42:33.787Z error: Hola Buenas Noches s
+2024-12-26T16:45:39.107Z info: Mensaje enviado a la API:
+2024-12-26T16:45:39.109Z info: Mensaje enviado a customerService
+2024-12-26T19:07:05.594Z info: Mensaje enviado a la API:
+2024-12-26T19:07:05.594Z info: Mensaje enviado a customerService
+2024-12-26T22:21:15.211Z info: Mensaje enviado a la API:
+2024-12-26T22:21:39.987Z error: necesito ayuda para realizar el pago gracias
+2024-12-27T13:20:30.504Z info: Mensaje enviado a la API:
+2024-12-27T13:20:30.506Z info: Mensaje enviado a customerService
+2024-12-27T16:23:20.592Z info: Mensaje enviado a la API:
+2024-12-27T16:23:20.592Z info: Mensaje enviado a customerService
+2024-12-27T16:26:20.124Z error: TypeError: Cannot destructure property 'body' of '(intermediate value)(intermediate value)(intermediate value)' as it is undefined.
+    at BotController.<anonymous> (/home/node/app/src/presentation/whatsapp/bot.controller.ts:83:19)
+    at Generator.next (<anonymous>)
+    at /home/node/app/src/presentation/whatsapp/bot.controller.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/node/app/src/presentation/whatsapp/bot.controller.ts:4:12)
+    at BotController.webhook (/home/node/app/src/presentation/whatsapp/bot.controller.ts:12:51)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/node/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/node/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+2024-12-27T16:26:20.647Z error: TypeError: Cannot destructure property 'body' of '(intermediate value)(intermediate value)(intermediate value)' as it is undefined.
+    at BotController.<anonymous> (/home/node/app/src/presentation/whatsapp/bot.controller.ts:83:19)
+    at Generator.next (<anonymous>)
+    at /home/node/app/src/presentation/whatsapp/bot.controller.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/node/app/src/presentation/whatsapp/bot.controller.ts:4:12)
+    at BotController.webhook (/home/node/app/src/presentation/whatsapp/bot.controller.ts:12:51)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/node/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/node/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+2024-12-27T16:26:22.589Z error: TypeError: Cannot destructure property 'body' of '(intermediate value)(intermediate value)(intermediate value)' as it is undefined.
+    at BotController.<anonymous> (/home/node/app/src/presentation/whatsapp/bot.controller.ts:83:19)
+    at Generator.next (<anonymous>)
+    at /home/node/app/src/presentation/whatsapp/bot.controller.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/node/app/src/presentation/whatsapp/bot.controller.ts:4:12)
+    at BotController.webhook (/home/node/app/src/presentation/whatsapp/bot.controller.ts:12:51)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/node/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/node/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+2024-12-27T16:26:46.839Z error: TypeError: Cannot destructure property 'body' of '(intermediate value)(intermediate value)(intermediate value)' as it is undefined.
+    at BotController.<anonymous> (/home/node/app/src/presentation/whatsapp/bot.controller.ts:83:19)
+    at Generator.next (<anonymous>)
+    at /home/node/app/src/presentation/whatsapp/bot.controller.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/node/app/src/presentation/whatsapp/bot.controller.ts:4:12)
+    at BotController.webhook (/home/node/app/src/presentation/whatsapp/bot.controller.ts:12:51)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/node/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/node/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+2024-12-27T16:32:41.170Z error: TypeError: Cannot destructure property 'body' of '(intermediate value)(intermediate value)(intermediate value)' as it is undefined.
+    at BotController.<anonymous> (/home/node/app/src/presentation/whatsapp/bot.controller.ts:83:19)
+    at Generator.next (<anonymous>)
+    at /home/node/app/src/presentation/whatsapp/bot.controller.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/node/app/src/presentation/whatsapp/bot.controller.ts:4:12)
+    at BotController.webhook (/home/node/app/src/presentation/whatsapp/bot.controller.ts:12:51)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/node/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/node/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+2024-12-27T16:47:34.145Z error: TypeError: Cannot destructure property 'body' of '(intermediate value)(intermediate value)(intermediate value)' as it is undefined.
+    at BotController.<anonymous> (/home/node/app/src/presentation/whatsapp/bot.controller.ts:83:19)
+    at Generator.next (<anonymous>)
+    at /home/node/app/src/presentation/whatsapp/bot.controller.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/node/app/src/presentation/whatsapp/bot.controller.ts:4:12)
+    at BotController.webhook (/home/node/app/src/presentation/whatsapp/bot.controller.ts:12:51)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/node/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/node/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+2024-12-27T16:47:34.621Z error: TypeError: Cannot destructure property 'body' of '(intermediate value)(intermediate value)(intermediate value)' as it is undefined.
+    at BotController.<anonymous> (/home/node/app/src/presentation/whatsapp/bot.controller.ts:83:19)
+    at Generator.next (<anonymous>)
+    at /home/node/app/src/presentation/whatsapp/bot.controller.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/node/app/src/presentation/whatsapp/bot.controller.ts:4:12)
+    at BotController.webhook (/home/node/app/src/presentation/whatsapp/bot.controller.ts:12:51)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/node/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/node/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+2024-12-27T16:47:36.597Z error: TypeError: Cannot destructure property 'body' of '(intermediate value)(intermediate value)(intermediate value)' as it is undefined.
+    at BotController.<anonymous> (/home/node/app/src/presentation/whatsapp/bot.controller.ts:83:19)
+    at Generator.next (<anonymous>)
+    at /home/node/app/src/presentation/whatsapp/bot.controller.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/node/app/src/presentation/whatsapp/bot.controller.ts:4:12)
+    at BotController.webhook (/home/node/app/src/presentation/whatsapp/bot.controller.ts:12:51)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/node/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/node/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+2024-12-27T16:48:04.079Z error: TypeError: Cannot destructure property 'body' of '(intermediate value)(intermediate value)(intermediate value)' as it is undefined.
+    at BotController.<anonymous> (/home/node/app/src/presentation/whatsapp/bot.controller.ts:83:19)
+    at Generator.next (<anonymous>)
+    at /home/node/app/src/presentation/whatsapp/bot.controller.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/node/app/src/presentation/whatsapp/bot.controller.ts:4:12)
+    at BotController.webhook (/home/node/app/src/presentation/whatsapp/bot.controller.ts:12:51)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/node/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/node/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+2024-12-27T16:54:41.720Z error: TypeError: Cannot destructure property 'body' of '(intermediate value)(intermediate value)(intermediate value)' as it is undefined.
+    at BotController.<anonymous> (/home/node/app/src/presentation/whatsapp/bot.controller.ts:83:19)
+    at Generator.next (<anonymous>)
+    at /home/node/app/src/presentation/whatsapp/bot.controller.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/node/app/src/presentation/whatsapp/bot.controller.ts:4:12)
+    at BotController.webhook (/home/node/app/src/presentation/whatsapp/bot.controller.ts:12:51)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/node/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/node/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+2024-12-27T17:10:48.217Z info: Datos de un documento enviados a la API
+2024-12-27T17:11:59.366Z info: Datos de una imagen enviados a la API
+2024-12-27T18:50:02.725Z error: TypeError: Cannot destructure property 'body' of '(intermediate value)(intermediate value)(intermediate value)' as it is undefined.
+    at BotController.<anonymous> (/home/node/app/src/presentation/whatsapp/bot.controller.ts:83:19)
+    at Generator.next (<anonymous>)
+    at /home/node/app/src/presentation/whatsapp/bot.controller.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/node/app/src/presentation/whatsapp/bot.controller.ts:4:12)
+    at BotController.webhook (/home/node/app/src/presentation/whatsapp/bot.controller.ts:12:51)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/node/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/node/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+2024-12-27T19:09:52.510Z info: Mensaje enviado a la API:
+2024-12-27T19:09:52.511Z info: Mensaje enviado a customerService
+2024-12-27T19:10:00.131Z info: Mensaje enviado a la API:
+2024-12-27T19:10:00.132Z info: Mensaje enviado a customerService
+2024-12-27T19:10:49.516Z info: Mensaje enviado a la API:
+2024-12-27T19:10:49.517Z info: Mensaje enviado a customerService
+2024-12-27T19:13:15.350Z info: Datos de una imagen enviados a la API
+2024-12-27T19:19:43.501Z info: Mensaje enviado a la API:
+2024-12-27T19:19:43.501Z info: Mensaje enviado a customerService
+2024-12-27T19:37:39.939Z info: Datos enviados a la API
+2024-12-27T19:41:09.606Z info: Mensaje enviado a la API:
+2024-12-27T19:41:09.607Z info: Mensaje enviado a customerService
+2024-12-27T19:41:31.182Z info: Mensaje enviado a la API:
+2024-12-27T19:41:31.182Z info: Mensaje enviado a customerService
+2024-12-27T19:41:49.160Z info: Mensaje enviado a la API:
+2024-12-27T19:41:49.161Z info: Mensaje enviado a customerService
+2024-12-27T19:46:40.634Z info: Mensaje enviado a la API:
+2024-12-27T19:46:40.635Z info: Mensaje enviado a customerService
+2024-12-27T20:11:04.064Z info: Mensaje enviado a la API:
+2024-12-27T20:11:04.064Z info: Mensaje enviado a customerService
+2024-12-27T20:18:45.459Z info: Mensaje enviado a la API:
+2024-12-27T20:18:45.459Z info: Mensaje enviado a customerService
+2024-12-27T20:31:19.167Z info: Mensaje enviado a la API:
+2024-12-27T20:31:19.168Z info: Mensaje enviado a customerService
+2024-12-27T20:39:33.270Z info: Mensaje enviado a la API:
+2024-12-27T20:39:33.271Z info: Mensaje enviado a customerService
+2024-12-27T20:50:47.185Z info: Mensaje enviado a la API:
+2024-12-27T20:50:47.186Z info: Mensaje enviado a customerService
+2024-12-27T20:58:44.484Z info: Mensaje enviado a la API:
+2024-12-27T20:58:44.484Z info: Mensaje enviado a customerService
+2024-12-27T21:05:16.814Z info: Datos enviados a la API
+2024-12-27T21:13:12.814Z info: Mensaje enviado a la API:
+2024-12-27T21:13:12.815Z info: Mensaje enviado a customerService
+2024-12-27T21:16:02.126Z info: Mensaje enviado a la API:
+2024-12-27T21:16:02.126Z info: Mensaje enviado a customerService
+2024-12-27T21:17:43.559Z info: Mensaje enviado a la API:
+2024-12-27T21:17:43.560Z info: Mensaje enviado a customerService
+2024-12-27T21:23:30.328Z info: Mensaje enviado a la API:
+2024-12-27T21:23:30.328Z info: Mensaje enviado a customerService
+2024-12-27T22:17:18.385Z info: Mensaje enviado a la API:
+2024-12-27T22:17:20.011Z info: Mensaje enviado a la API:
+2024-12-27T22:33:54.374Z info: Mensaje enviado a la API:
+2024-12-27T23:09:16.253Z info: Mensaje enviado a la API:
+2024-12-27T23:18:09.082Z info: Mensaje enviado a la API:
+2024-12-27T23:19:05.055Z info: Mensaje enviado a la API:
+2024-12-27T23:34:23.019Z error: TypeError: Cannot destructure property 'body' of '(intermediate value)(intermediate value)(intermediate value)' as it is undefined.
+    at BotController.<anonymous> (/home/node/app/src/presentation/whatsapp/bot.controller.ts:45:17)
+    at Generator.next (<anonymous>)
+    at /home/node/app/src/presentation/whatsapp/bot.controller.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/node/app/src/presentation/whatsapp/bot.controller.ts:4:12)
+    at BotController.webhook (/home/node/app/src/presentation/whatsapp/bot.controller.ts:12:51)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/node/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/node/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+2024-12-27T23:35:05.961Z info: Mensaje enviado a la API:
+2024-12-28T14:50:23.239Z info: Mensaje enviado a la API:
+2024-12-28T14:50:23.241Z info: Mensaje enviado a customerService
+2024-12-28T15:25:47.067Z info: Mensaje enviado a la API:
+2024-12-28T15:25:47.068Z info: Mensaje enviado a customerService
+2024-12-28T17:03:19.241Z info: Mensaje enviado a la API:
+2024-12-28T17:03:19.242Z info: Mensaje enviado a customerService
+2024-12-30T23:09:57.449Z info: Mensaje enviado a la API:
+2024-12-31T22:02:30.090Z info: Mensaje enviado a la API:
+2024-12-31T22:02:54.734Z error: Buenas Tardes
+2025-01-02T13:24:37.609Z info: Datos enviados a la API
+2025-01-02T19:00:19.764Z info: Mensaje enviado a la API:
+2025-01-02T19:00:19.766Z info: Mensaje enviado a customerService
+2025-01-02T19:01:03.211Z info: Mensaje enviado a la API:
+2025-01-02T19:01:03.212Z info: Mensaje enviado a customerService
+2025-01-02T19:03:10.339Z info: Mensaje enviado a la API:
+2025-01-02T19:03:10.340Z info: Mensaje enviado a customerService
+2025-01-02T19:22:29.109Z info: Datos de una imagen enviados a la API
+2025-01-02T19:31:00.325Z info: Mensaje enviado a la API:
+2025-01-02T19:31:00.326Z info: Mensaje enviado a customerService
+2025-01-02T20:27:09.088Z info: Datos de una imagen enviados a la API
+2025-01-02T21:17:08.743Z info: Datos de una imagen enviados a la API
+2025-01-03T03:20:33.573Z info: Mensaje enviado a la API:
+2025-01-03T06:06:36.447Z info: Mensaje enviado a la API:
+2025-01-03T06:06:36.448Z info: Mensaje enviado a customerService
+2025-01-03T13:11:00.010Z info: Mensaje enviado a la API:
+2025-01-03T13:11:00.011Z info: Mensaje enviado a customerService
+2025-01-03T13:26:06.992Z info: Mensaje enviado a la API:
+2025-01-03T13:26:06.992Z info: Mensaje enviado a customerService
+2025-01-03T16:13:06.192Z info: Mensaje enviado a la API:
+2025-01-03T16:13:06.193Z info: Mensaje enviado a customerService
+2025-01-03T19:01:02.380Z info: Mensaje enviado a la API:
+2025-01-03T19:01:02.380Z info: Mensaje enviado a customerService
+2025-01-03T22:12:37.589Z info: Mensaje enviado a la API:
+2025-01-03T22:13:02.511Z error: Hola:D no los conozco pero quería decirles feliz año nuevo
+2025-01-04T21:52:33.457Z error: TypeError: Cannot destructure property 'body' of '(intermediate value)(intermediate value)(intermediate value)' as it is undefined.
+    at BotController.<anonymous> (/home/node/app/src/presentation/whatsapp/bot.controller.ts:45:17)
+    at Generator.next (<anonymous>)
+    at /home/node/app/src/presentation/whatsapp/bot.controller.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/node/app/src/presentation/whatsapp/bot.controller.ts:4:12)
+    at BotController.webhook (/home/node/app/src/presentation/whatsapp/bot.controller.ts:12:51)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/node/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/node/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+2025-01-04T21:52:53.335Z info: Mensaje enviado a la API:
+2025-01-04T21:53:18.027Z error: Buenas tardes envío soporte de pago
+2025-01-07T14:03:17.510Z info: Mensaje enviado a la API:
+2025-01-07T14:03:17.513Z info: Mensaje enviado a customerService
+2025-01-07T14:10:31.535Z info: Datos de una imagen enviados a la API
+2025-01-07T15:39:07.561Z info: Mensaje enviado a la API:
+2025-01-07T15:39:07.562Z info: Mensaje enviado a customerService
+2025-01-07T15:42:18.824Z info: Mensaje enviado a la API:
+2025-01-07T15:42:18.825Z info: Mensaje enviado a customerService
+2025-01-07T16:02:08.163Z info: Mensaje enviado a la API:
+2025-01-07T16:02:08.163Z info: Mensaje enviado a customerService
+2025-01-07T16:19:13.014Z info: Mensaje enviado a la API:
+2025-01-07T16:19:13.014Z info: Mensaje enviado a customerService
+2025-01-07T16:21:06.363Z info: Datos de un documento enviados a la API
+2025-01-07T16:25:28.146Z info: Datos de un documento enviados a la API
+2025-01-07T16:25:30.518Z info: Mensaje enviado a la API:
+2025-01-07T16:25:30.518Z info: Mensaje enviado a customerService
+2025-01-07T16:34:34.167Z info: Datos de una imagen enviados a la API
+2025-01-07T16:39:31.241Z info: Datos de una imagen enviados a la API
+2025-01-07T17:39:33.408Z info: Mensaje enviado a la API:
+2025-01-07T17:39:33.408Z info: Mensaje enviado a customerService
+2025-01-07T18:12:21.572Z info: Mensaje enviado a la API:
+2025-01-07T18:12:21.572Z info: Mensaje enviado a customerService
+2025-01-07T19:49:35.048Z info: Mensaje enviado a la API:
+2025-01-07T19:49:35.050Z info: Mensaje enviado a customerService
+2025-01-07T19:51:30.266Z info: Mensaje enviado a la API:
+2025-01-07T19:51:30.267Z info: Mensaje enviado a customerService
+2025-01-07T19:52:23.861Z info: Mensaje enviado a la API:
+2025-01-07T19:52:23.862Z info: Mensaje enviado a customerService
+2025-01-07T20:00:34.088Z info: Mensaje enviado a la API:
+2025-01-07T20:00:34.089Z info: Mensaje enviado a customerService
+2025-01-07T20:00:34.550Z info: Datos de una imagen enviados a la API
+2025-01-07T20:10:56.748Z info: Mensaje enviado a la API:
+2025-01-07T20:10:56.748Z info: Mensaje enviado a customerService
+2025-01-07T20:12:24.930Z info: Datos de una imagen enviados a la API
+2025-01-07T20:20:23.954Z info: Mensaje enviado a la API:
+2025-01-07T20:20:23.955Z info: Mensaje enviado a customerService
+2025-01-07T20:21:22.682Z error: TypeError: Cannot destructure property 'body' of '(intermediate value)(intermediate value)(intermediate value)' as it is undefined.
+    at BotController.<anonymous> (/home/node/app/src/presentation/whatsapp/bot.controller.ts:83:19)
+    at Generator.next (<anonymous>)
+    at /home/node/app/src/presentation/whatsapp/bot.controller.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/node/app/src/presentation/whatsapp/bot.controller.ts:4:12)
+    at BotController.webhook (/home/node/app/src/presentation/whatsapp/bot.controller.ts:12:51)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/node/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/node/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+2025-01-07T20:57:11.034Z info: Datos enviados a la API
+2025-01-07T21:47:06.923Z info: Datos de una imagen enviados a la API
+2025-01-07T22:37:10.135Z info: Mensaje enviado a la API:
+2025-01-07T22:37:35.014Z error: 4
+2025-01-08T16:19:13.302Z info: Mensaje enviado a la API:
+2025-01-08T16:19:13.304Z info: Mensaje enviado a customerService
+2025-01-08T16:39:34.248Z info: Mensaje enviado a la API:
+2025-01-08T16:39:34.249Z info: Mensaje enviado a customerService
+2025-01-08T18:06:29.694Z info: Mensaje enviado a la API:
+2025-01-08T18:06:29.698Z info: Mensaje enviado a customerService
+2025-01-08T18:55:43.186Z info: Mensaje enviado a la API:
+2025-01-08T18:55:43.186Z info: Mensaje enviado a customerService
+2025-01-09T11:33:57.174Z info: Mensaje enviado a la API:
+2025-01-09T11:33:57.182Z info: Mensaje enviado a customerService
+2025-01-09T13:21:15.491Z info: Mensaje enviado a la API:
+2025-01-09T13:21:15.491Z info: Mensaje enviado a customerService
+2025-01-09T13:48:25.821Z info: Mensaje enviado a la API:
+2025-01-09T13:48:25.822Z info: Mensaje enviado a customerService
+2025-01-09T16:22:42.665Z info: Mensaje enviado a la API:
+2025-01-09T16:22:42.665Z info: Mensaje enviado a customerService
+2025-01-09T16:25:05.403Z info: Mensaje enviado a la API:
+2025-01-09T16:25:05.404Z info: Mensaje enviado a customerService
+2025-01-09T16:25:11.645Z info: Mensaje enviado a la API:
+2025-01-09T16:25:11.645Z info: Mensaje enviado a customerService
+2025-01-09T16:25:33.595Z info: Mensaje enviado a la API:
+2025-01-09T16:25:33.596Z info: Mensaje enviado a customerService
+2025-01-09T16:27:27.891Z info: Mensaje enviado a la API:
+2025-01-09T16:27:27.891Z info: Mensaje enviado a customerService
+2025-01-09T16:27:59.194Z info: Mensaje enviado a la API:
+2025-01-09T16:27:59.195Z info: Mensaje enviado a customerService
+2025-01-09T16:36:54.566Z info: Mensaje enviado a la API:
+2025-01-09T16:36:54.566Z info: Mensaje enviado a customerService
+2025-01-09T16:37:15.525Z info: Mensaje enviado a la API:
+2025-01-09T16:37:15.525Z info: Mensaje enviado a customerService
+2025-01-09T16:49:36.006Z info: Datos de una imagen enviados a la API
+2025-01-09T17:03:42.084Z info: Mensaje enviado a la API:
+2025-01-09T17:03:42.085Z info: Mensaje enviado a customerService
+2025-01-09T17:43:23.650Z info: Mensaje enviado a la API:
+2025-01-09T17:43:23.651Z info: Mensaje enviado a customerService
+2025-01-09T17:47:14.680Z info: Mensaje enviado a la API:
+2025-01-09T17:47:14.681Z info: Mensaje enviado a customerService
+2025-01-09T17:56:28.442Z info: Mensaje enviado a la API:
+2025-01-09T17:56:28.442Z info: Mensaje enviado a customerService
+2025-01-09T18:17:41.055Z info: Datos enviados a la API
+2025-01-09T18:34:08.350Z info: Mensaje enviado a la API:
+2025-01-09T18:34:08.351Z info: Mensaje enviado a customerService
+2025-01-09T19:05:06.698Z info: Mensaje enviado a la API:
+2025-01-09T19:05:06.699Z info: Mensaje enviado a customerService
+2025-01-09T19:08:49.510Z info: Mensaje enviado a la API:
+2025-01-09T19:08:49.510Z info: Mensaje enviado a customerService
+2025-01-09T19:09:08.662Z info: Mensaje enviado a la API:
+2025-01-09T19:09:08.662Z info: Mensaje enviado a customerService
+2025-01-09T19:21:46.154Z info: Mensaje enviado a la API:
+2025-01-09T19:21:46.155Z info: Mensaje enviado a customerService
+2025-01-09T19:22:23.682Z info: Mensaje enviado a la API:
+2025-01-09T19:22:23.682Z info: Mensaje enviado a customerService
+2025-01-09T19:25:30.610Z info: Datos de una imagen enviados a la API
+2025-01-09T19:30:56.383Z info: Mensaje enviado a la API:
+2025-01-09T19:30:56.383Z info: Mensaje enviado a customerService
+2025-01-09T19:53:11.898Z info: Mensaje enviado a la API:
+2025-01-09T19:53:11.899Z info: Mensaje enviado a customerService
+2025-01-09T20:02:24.650Z info: Datos de una imagen enviados a la API
+2025-01-09T20:09:17.960Z info: Datos de una imagen enviados a la API
+2025-01-09T20:14:46.537Z info: Datos de una imagen enviados a la API
+2025-01-09T20:28:11.428Z info: Datos enviados a la API
+2025-01-09T20:33:06.884Z info: Mensaje enviado a la API:
+2025-01-09T20:33:06.884Z info: Mensaje enviado a customerService
+2025-01-09T20:33:58.712Z info: Mensaje enviado a la API:
+2025-01-09T20:33:58.713Z info: Mensaje enviado a customerService
+2025-01-09T20:36:55.996Z info: Mensaje enviado a la API:
+2025-01-09T20:36:55.996Z info: Mensaje enviado a customerService
+2025-01-09T20:37:05.847Z info: Mensaje enviado a la API:
+2025-01-09T20:37:05.848Z info: Mensaje enviado a customerService
+2025-01-09T20:37:54.558Z info: Mensaje enviado a la API:
+2025-01-09T20:37:54.558Z info: Mensaje enviado a customerService
+2025-01-09T20:38:59.859Z info: Mensaje enviado a la API:
+2025-01-09T20:38:59.859Z info: Mensaje enviado a customerService
+2025-01-09T20:39:32.359Z info: Mensaje enviado a la API:
+2025-01-09T20:39:32.360Z info: Mensaje enviado a customerService
+2025-01-09T20:43:43.196Z info: Mensaje enviado a la API:
+2025-01-09T20:43:43.196Z info: Mensaje enviado a customerService
+2025-01-09T20:48:44.379Z info: Mensaje enviado a la API:
+2025-01-09T20:48:44.380Z info: Mensaje enviado a customerService
+2025-01-09T20:50:27.801Z info: Mensaje enviado a la API:
+2025-01-09T20:50:27.801Z info: Mensaje enviado a customerService
+2025-01-09T21:11:49.839Z info: Mensaje enviado a la API:
+2025-01-09T21:11:49.840Z info: Mensaje enviado a customerService
+2025-01-09T21:35:18.608Z info: Mensaje enviado a la API:
+2025-01-09T21:35:18.609Z info: Mensaje enviado a customerService
+2025-01-09T21:44:04.874Z info: Mensaje enviado a la API:
+2025-01-09T21:44:04.875Z info: Mensaje enviado a customerService
+2025-01-10T00:00:30.586Z info: Mensaje enviado a la API:
+2025-01-10T02:09:57.030Z info: Mensaje enviado a la API:
+2025-01-10T02:09:57.406Z info: Mensaje enviado a la API:
+2025-01-10T02:10:26.099Z error: TypeError: Cannot destructure property 'body' of '(intermediate value)(intermediate value)(intermediate value)' as it is undefined.
+    at BotController.<anonymous> (/home/node/app/src/presentation/whatsapp/bot.controller.ts:45:17)
+    at Generator.next (<anonymous>)
+    at /home/node/app/src/presentation/whatsapp/bot.controller.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/node/app/src/presentation/whatsapp/bot.controller.ts:4:12)
+    at BotController.webhook (/home/node/app/src/presentation/whatsapp/bot.controller.ts:12:51)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/node/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/node/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+2025-01-10T02:45:27.097Z error: TypeError: Cannot destructure property 'body' of '(intermediate value)(intermediate value)(intermediate value)' as it is undefined.
+    at BotController.<anonymous> (/home/node/app/src/presentation/whatsapp/bot.controller.ts:45:17)
+    at Generator.next (<anonymous>)
+    at /home/node/app/src/presentation/whatsapp/bot.controller.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/node/app/src/presentation/whatsapp/bot.controller.ts:4:12)
+    at BotController.webhook (/home/node/app/src/presentation/whatsapp/bot.controller.ts:12:51)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/node/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/node/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+2025-01-10T02:45:27.786Z error: TypeError: Cannot destructure property 'body' of '(intermediate value)(intermediate value)(intermediate value)' as it is undefined.
+    at BotController.<anonymous> (/home/node/app/src/presentation/whatsapp/bot.controller.ts:45:17)
+    at Generator.next (<anonymous>)
+    at /home/node/app/src/presentation/whatsapp/bot.controller.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/node/app/src/presentation/whatsapp/bot.controller.ts:4:12)
+    at BotController.webhook (/home/node/app/src/presentation/whatsapp/bot.controller.ts:12:51)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/node/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/node/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+2025-01-10T02:45:30.015Z error: TypeError: Cannot destructure property 'body' of '(intermediate value)(intermediate value)(intermediate value)' as it is undefined.
+    at BotController.<anonymous> (/home/node/app/src/presentation/whatsapp/bot.controller.ts:45:17)
+    at Generator.next (<anonymous>)
+    at /home/node/app/src/presentation/whatsapp/bot.controller.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/node/app/src/presentation/whatsapp/bot.controller.ts:4:12)
+    at BotController.webhook (/home/node/app/src/presentation/whatsapp/bot.controller.ts:12:51)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/node/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/node/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+2025-01-10T02:45:56.570Z error: TypeError: Cannot destructure property 'body' of '(intermediate value)(intermediate value)(intermediate value)' as it is undefined.
+    at BotController.<anonymous> (/home/node/app/src/presentation/whatsapp/bot.controller.ts:45:17)
+    at Generator.next (<anonymous>)
+    at /home/node/app/src/presentation/whatsapp/bot.controller.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/node/app/src/presentation/whatsapp/bot.controller.ts:4:12)
+    at BotController.webhook (/home/node/app/src/presentation/whatsapp/bot.controller.ts:12:51)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/node/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/node/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+2025-01-10T02:52:18.542Z error: TypeError: Cannot destructure property 'body' of '(intermediate value)(intermediate value)(intermediate value)' as it is undefined.
+    at BotController.<anonymous> (/home/node/app/src/presentation/whatsapp/bot.controller.ts:45:17)
+    at Generator.next (<anonymous>)
+    at /home/node/app/src/presentation/whatsapp/bot.controller.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/node/app/src/presentation/whatsapp/bot.controller.ts:4:12)
+    at BotController.webhook (/home/node/app/src/presentation/whatsapp/bot.controller.ts:12:51)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/node/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/node/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+2025-01-10T03:38:00.049Z error: TypeError: Cannot destructure property 'body' of '(intermediate value)(intermediate value)(intermediate value)' as it is undefined.
+    at BotController.<anonymous> (/home/node/app/src/presentation/whatsapp/bot.controller.ts:45:17)
+    at Generator.next (<anonymous>)
+    at /home/node/app/src/presentation/whatsapp/bot.controller.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/node/app/src/presentation/whatsapp/bot.controller.ts:4:12)
+    at BotController.webhook (/home/node/app/src/presentation/whatsapp/bot.controller.ts:12:51)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/node/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/node/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+2025-01-10T04:35:04.794Z error: TypeError: Cannot destructure property 'body' of '(intermediate value)(intermediate value)(intermediate value)' as it is undefined.
+    at BotController.<anonymous> (/home/node/app/src/presentation/whatsapp/bot.controller.ts:45:17)
+    at Generator.next (<anonymous>)
+    at /home/node/app/src/presentation/whatsapp/bot.controller.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/node/app/src/presentation/whatsapp/bot.controller.ts:4:12)
+    at BotController.webhook (/home/node/app/src/presentation/whatsapp/bot.controller.ts:12:51)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/node/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/node/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+2025-01-10T13:18:06.293Z info: Mensaje enviado a la API:
+2025-01-10T13:18:06.303Z info: Mensaje enviado a customerService
+2025-01-10T13:37:08.161Z info: Mensaje enviado a la API:
+2025-01-10T13:37:08.162Z info: Mensaje enviado a customerService
+2025-01-10T13:38:08.678Z info: Datos enviados a la API
+2025-01-10T13:42:03.231Z info: Mensaje enviado a la API:
+2025-01-10T13:42:03.232Z info: Mensaje enviado a customerService
+2025-01-10T14:20:21.090Z info: Datos de una imagen enviados a la API
+2025-01-10T14:36:01.281Z info: Mensaje enviado a la API:
+2025-01-10T14:36:01.283Z info: Mensaje enviado a customerService
+2025-01-10T14:38:07.575Z info: Mensaje enviado a la API:
+2025-01-10T14:38:07.576Z info: Mensaje enviado a customerService
+2025-01-10T14:48:12.767Z info: Datos enviados a la API
+2025-01-10T15:08:36.561Z info: Mensaje enviado a la API:
+2025-01-10T15:08:36.562Z info: Mensaje enviado a customerService
+2025-01-10T15:36:19.056Z info: Datos de una imagen enviados a la API
+2025-01-10T16:03:29.122Z info: Mensaje enviado a la API:
+2025-01-10T16:03:29.122Z info: Mensaje enviado a customerService
+2025-01-10T16:29:33.232Z info: Mensaje enviado a la API:
+2025-01-10T16:29:33.233Z info: Mensaje enviado a customerService
+2025-01-10T16:29:56.351Z info: Mensaje enviado a la API:
+2025-01-10T16:29:56.352Z info: Mensaje enviado a customerService
+2025-01-10T16:30:22.438Z info: Mensaje enviado a la API:
+2025-01-10T16:30:22.439Z info: Mensaje enviado a customerService
+2025-01-10T16:32:35.629Z info: Mensaje enviado a la API:
+2025-01-10T16:32:35.629Z info: Mensaje enviado a customerService
+2025-01-10T16:47:46.785Z info: Mensaje enviado a la API:
+2025-01-10T16:47:46.786Z info: Mensaje enviado a customerService
+2025-01-10T16:50:01.112Z info: Mensaje enviado a la API:
+2025-01-10T16:50:01.113Z info: Mensaje enviado a customerService
+2025-01-10T16:56:23.862Z info: Mensaje enviado a la API:
+2025-01-10T16:56:23.862Z info: Mensaje enviado a customerService
+2025-01-10T16:56:35.554Z info: Mensaje enviado a la API:
+2025-01-10T16:56:35.555Z info: Mensaje enviado a customerService
+2025-01-10T17:07:49.813Z info: Mensaje enviado a la API:
+2025-01-10T17:07:49.813Z info: Mensaje enviado a customerService
+2025-01-10T18:08:23.976Z info: Mensaje enviado a la API:
+2025-01-10T18:08:23.985Z info: Mensaje enviado a customerService
+2025-01-10T18:58:12.284Z info: Mensaje enviado a la API:
+2025-01-10T18:58:12.285Z info: Mensaje enviado a customerService
+2025-01-10T19:02:09.663Z info: Mensaje enviado a la API:
+2025-01-10T19:02:09.665Z info: Mensaje enviado a customerService
+2025-01-10T19:07:36.274Z info: Mensaje enviado a la API:
+2025-01-10T19:07:36.274Z info: Mensaje enviado a customerService
+2025-01-10T19:08:33.991Z info: Mensaje enviado a la API:
+2025-01-10T19:08:33.991Z info: Mensaje enviado a customerService
+2025-01-10T19:18:12.832Z info: Datos enviados a la API
+2025-01-10T19:32:12.365Z info: Mensaje enviado a la API:
+2025-01-10T19:32:12.365Z info: Mensaje enviado a customerService
+2025-01-10T19:49:10.254Z info: Mensaje enviado a la API:
+2025-01-10T19:49:10.254Z info: Mensaje enviado a customerService
+2025-01-10T19:58:58.148Z info: Datos enviados a la API
+2025-01-10T19:59:21.494Z info: Mensaje enviado a la API:
+2025-01-10T19:59:21.494Z info: Mensaje enviado a customerService
+2025-01-10T20:57:39.929Z info: Datos enviados a la API
+2025-01-10T21:05:10.964Z info: Datos enviados a la API
+2025-01-10T22:12:26.754Z error: TypeError: Cannot destructure property 'body' of '(intermediate value)(intermediate value)(intermediate value)' as it is undefined.
+    at BotController.<anonymous> (/home/node/app/src/presentation/whatsapp/bot.controller.ts:45:17)
+    at Generator.next (<anonymous>)
+    at /home/node/app/src/presentation/whatsapp/bot.controller.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/node/app/src/presentation/whatsapp/bot.controller.ts:4:12)
+    at BotController.webhook (/home/node/app/src/presentation/whatsapp/bot.controller.ts:12:51)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/node/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/node/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+2025-01-10T22:12:31.655Z info: Mensaje enviado a la API:
+2025-01-10T22:12:44.322Z info: Mensaje enviado a la API:
+2025-01-10T22:12:46.557Z info: Mensaje enviado a la API:
+2025-01-10T22:29:22.173Z error: TypeError: Cannot destructure property 'body' of '(intermediate value)(intermediate value)(intermediate value)' as it is undefined.
+    at BotController.<anonymous> (/home/node/app/src/presentation/whatsapp/bot.controller.ts:45:17)
+    at Generator.next (<anonymous>)
+    at /home/node/app/src/presentation/whatsapp/bot.controller.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/node/app/src/presentation/whatsapp/bot.controller.ts:4:12)
+    at BotController.webhook (/home/node/app/src/presentation/whatsapp/bot.controller.ts:12:51)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/node/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/node/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+2025-01-10T22:31:54.913Z info: Mensaje enviado a la API:
+2025-01-10T22:31:56.046Z info: Mensaje enviado a la API:
+2025-01-10T22:34:32.778Z error: TypeError: Cannot destructure property 'body' of '(intermediate value)(intermediate value)(intermediate value)' as it is undefined.
+    at BotController.<anonymous> (/home/node/app/src/presentation/whatsapp/bot.controller.ts:45:17)
+    at Generator.next (<anonymous>)
+    at /home/node/app/src/presentation/whatsapp/bot.controller.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/node/app/src/presentation/whatsapp/bot.controller.ts:4:12)
+    at BotController.webhook (/home/node/app/src/presentation/whatsapp/bot.controller.ts:12:51)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/node/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/node/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+2025-01-11T00:11:16.183Z info: Mensaje enviado a la API:
+2025-01-11T00:11:24.678Z info: Mensaje enviado a la API:
+2025-01-11T00:11:43.129Z info: Mensaje enviado a la API:
+2025-01-11T00:13:43.218Z info: Mensaje enviado a la API:
+2025-01-11T14:18:29.169Z info: Mensaje enviado a la API:
+2025-01-11T14:18:29.170Z info: Mensaje enviado a customerService
+2025-01-11T14:18:57.189Z info: Mensaje enviado a la API:
+2025-01-11T14:18:57.190Z info: Mensaje enviado a customerService
+2025-01-11T14:19:03.526Z info: Mensaje enviado a la API:
+2025-01-11T14:19:03.527Z info: Mensaje enviado a customerService
+2025-01-11T14:19:11.191Z info: Mensaje enviado a la API:
+2025-01-11T14:19:11.192Z info: Mensaje enviado a customerService
+2025-01-11T14:19:14.532Z info: Mensaje enviado a la API:
+2025-01-11T14:19:14.532Z info: Mensaje enviado a customerService
+2025-01-11T14:19:17.887Z info: Mensaje enviado a la API:
+2025-01-11T14:19:17.887Z info: Mensaje enviado a customerService
+2025-01-11T14:19:20.389Z info: Mensaje enviado a la API:
+2025-01-11T14:19:20.390Z info: Mensaje enviado a customerService
+2025-01-11T15:50:01.722Z info: Mensaje enviado a la API:
+2025-01-11T15:50:01.723Z info: Mensaje enviado a customerService
+2025-01-11T15:52:35.343Z error: TypeError: Cannot destructure property 'body' of '(intermediate value)(intermediate value)(intermediate value)' as it is undefined.
+    at BotController.<anonymous> (/home/node/app/src/presentation/whatsapp/bot.controller.ts:83:19)
+    at Generator.next (<anonymous>)
+    at /home/node/app/src/presentation/whatsapp/bot.controller.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/node/app/src/presentation/whatsapp/bot.controller.ts:4:12)
+    at BotController.webhook (/home/node/app/src/presentation/whatsapp/bot.controller.ts:12:51)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/node/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/node/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+2025-01-11T15:52:36.042Z error: TypeError: Cannot destructure property 'body' of '(intermediate value)(intermediate value)(intermediate value)' as it is undefined.
+    at BotController.<anonymous> (/home/node/app/src/presentation/whatsapp/bot.controller.ts:83:19)
+    at Generator.next (<anonymous>)
+    at /home/node/app/src/presentation/whatsapp/bot.controller.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/node/app/src/presentation/whatsapp/bot.controller.ts:4:12)
+    at BotController.webhook (/home/node/app/src/presentation/whatsapp/bot.controller.ts:12:51)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/node/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/node/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+2025-01-11T15:52:57.894Z info: Mensaje enviado a la API:
+2025-01-11T15:52:57.894Z info: Mensaje enviado a customerService
+2025-01-11T15:53:29.445Z info: Mensaje enviado a la API:
+2025-01-11T15:53:29.446Z info: Mensaje enviado a customerService
+2025-01-11T15:53:34.791Z info: Mensaje enviado a la API:
+2025-01-11T15:53:34.791Z info: Mensaje enviado a customerService
+2025-01-11T15:55:33.604Z info: Mensaje enviado a la API:
+2025-01-11T15:55:33.605Z info: Mensaje enviado a customerService
+2025-01-11T15:57:18.122Z info: Mensaje enviado a la API:
+2025-01-11T15:57:18.122Z info: Mensaje enviado a customerService
+2025-01-11T16:09:16.783Z info: Mensaje enviado a la API:
+2025-01-11T16:09:16.784Z info: Mensaje enviado a customerService
+2025-01-11T16:20:01.188Z info: Mensaje enviado a la API:
+2025-01-11T16:20:01.188Z info: Mensaje enviado a customerService
+2025-01-11T16:22:53.822Z info: Mensaje enviado a la API:
+2025-01-11T16:22:53.823Z info: Mensaje enviado a customerService
+2025-01-11T16:26:08.146Z info: Mensaje enviado a la API:
+2025-01-11T16:26:08.146Z info: Mensaje enviado a customerService
+2025-01-11T16:27:19.876Z info: Mensaje enviado a la API:
+2025-01-11T16:27:19.877Z info: Mensaje enviado a customerService
+2025-01-11T16:35:11.659Z info: Mensaje enviado a la API:
+2025-01-11T16:35:11.660Z info: Mensaje enviado a customerService
+2025-01-11T16:44:37.823Z info: Datos de un documento enviados a la API
+2025-01-11T16:45:57.818Z info: Datos de una imagen enviados a la API
+2025-01-11T16:49:25.809Z info: Mensaje enviado a la API:
+2025-01-11T16:49:25.810Z info: Mensaje enviado a customerService
+2025-01-11T16:53:30.884Z info: Mensaje enviado a la API:
+2025-01-11T16:53:30.884Z info: Mensaje enviado a customerService
+2025-01-11T16:53:43.483Z info: Mensaje enviado a la API:
+2025-01-11T16:53:43.484Z info: Mensaje enviado a customerService
+2025-01-11T16:54:18.596Z info: Mensaje enviado a la API:
+2025-01-11T16:54:18.596Z info: Mensaje enviado a customerService
+2025-01-11T16:54:38.953Z info: Mensaje enviado a la API:
+2025-01-11T16:54:38.953Z info: Mensaje enviado a customerService
+2025-01-11T17:01:59.097Z info: Mensaje enviado a la API:
+2025-01-11T17:01:59.098Z info: Mensaje enviado a customerService
+2025-01-11T17:37:48.906Z error: TypeError: Cannot destructure property 'body' of '(intermediate value)(intermediate value)(intermediate value)' as it is undefined.
+    at BotController.<anonymous> (/home/node/app/src/presentation/whatsapp/bot.controller.ts:83:19)
+    at Generator.next (<anonymous>)
+    at /home/node/app/src/presentation/whatsapp/bot.controller.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/node/app/src/presentation/whatsapp/bot.controller.ts:4:12)
+    at BotController.webhook (/home/node/app/src/presentation/whatsapp/bot.controller.ts:12:51)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/node/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/node/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+2025-01-11T17:48:25.794Z info: Mensaje enviado a la API:
+2025-01-11T17:48:25.794Z info: Mensaje enviado a customerService
+2025-01-11T17:50:46.090Z info: Datos de una imagen enviados a la API
+2025-01-11T17:51:49.913Z info: Mensaje enviado a la API:
+2025-01-11T17:51:49.913Z info: Mensaje enviado a customerService
+2025-01-11T17:56:49.426Z info: Datos enviados a la API
+2025-01-11T18:08:47.768Z info: Mensaje enviado a la API:
+2025-01-11T18:18:43.307Z info: Mensaje enviado a la API:
+2025-01-11T18:36:03.293Z info: Mensaje enviado a la API:
+2025-01-11T18:48:25.936Z info: Mensaje enviado a la API:
+2025-01-11T19:31:22.603Z info: Mensaje enviado a la API:
+2025-01-11T20:04:58.784Z info: Mensaje enviado a la API:
+2025-01-11T21:17:38.481Z error: TypeError: Cannot destructure property 'body' of '(intermediate value)(intermediate value)(intermediate value)' as it is undefined.
+    at BotController.<anonymous> (/home/node/app/src/presentation/whatsapp/bot.controller.ts:45:17)
+    at Generator.next (<anonymous>)
+    at /home/node/app/src/presentation/whatsapp/bot.controller.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/node/app/src/presentation/whatsapp/bot.controller.ts:4:12)
+    at BotController.webhook (/home/node/app/src/presentation/whatsapp/bot.controller.ts:12:51)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/node/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/node/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+2025-01-11T23:34:18.786Z info: Mensaje enviado a la API:
+2025-01-11T23:34:50.320Z info: Mensaje enviado a la API:
+2025-01-11T23:35:05.646Z info: Mensaje enviado a la API:
+2025-01-12T12:35:04.251Z info: Mensaje enviado a la API:
+2025-01-12T12:36:00.439Z info: Mensaje enviado a la API:
+2025-01-12T12:36:35.855Z info: Mensaje enviado a la API:
+2025-01-13T15:21:23.767Z info: Mensaje enviado a la API:
+2025-01-13T15:21:23.777Z info: Mensaje enviado a customerService
+2025-01-13T15:21:28.517Z info: Mensaje enviado a la API:
+2025-01-13T15:21:28.519Z info: Mensaje enviado a customerService
+2025-01-13T16:32:51.883Z info: Mensaje enviado a la API:
+2025-01-13T16:32:51.884Z info: Mensaje enviado a customerService
+2025-01-13T18:19:20.425Z info: Mensaje enviado a la API:
+2025-01-13T18:19:20.427Z info: Mensaje enviado a customerService
+2025-01-13T19:03:26.484Z info: Mensaje enviado a la API:
+2025-01-13T19:03:26.486Z info: Mensaje enviado a customerService
+2025-01-13T19:31:04.200Z info: Mensaje enviado a la API:
+2025-01-13T19:31:04.202Z info: Mensaje enviado a customerService
+2025-01-13T20:44:15.587Z info: Mensaje enviado a la API:
+2025-01-13T20:44:15.587Z info: Mensaje enviado a customerService
+2025-01-13T20:49:02.623Z info: Mensaje enviado a la API:
+2025-01-13T20:49:02.623Z info: Mensaje enviado a customerService
+2025-01-13T21:17:13.706Z info: Mensaje enviado a la API:
+2025-01-13T21:17:13.707Z info: Mensaje enviado a customerService
+2025-01-13T21:22:19.026Z info: Datos de una imagen enviados a la API
+2025-01-13T21:22:42.502Z info: Mensaje enviado a la API:
+2025-01-13T21:22:42.503Z info: Mensaje enviado a customerService
+2025-01-13T21:24:15.490Z info: Datos de una imagen enviados a la API
+2025-01-13T21:24:38.151Z info: Mensaje enviado a la API:
+2025-01-13T21:24:38.152Z info: Mensaje enviado a customerService
+2025-01-14T00:52:53.580Z info: Mensaje enviado a la API:
+2025-01-14T00:53:41.051Z info: Mensaje enviado a la API:
+2025-01-14T13:17:25.810Z info: Mensaje enviado a la API:
+2025-01-14T13:17:25.810Z info: Mensaje enviado a customerService
+2025-01-14T14:17:14.415Z info: Mensaje enviado a la API:
+2025-01-14T14:17:14.415Z info: Mensaje enviado a customerService
+2025-01-14T14:28:34.840Z info: Mensaje enviado a la API:
+2025-01-14T14:28:34.841Z info: Mensaje enviado a customerService
+2025-01-14T15:04:34.942Z info: Mensaje enviado a la API:
+2025-01-14T15:04:34.942Z info: Mensaje enviado a customerService
+2025-01-14T15:18:50.553Z info: Mensaje enviado a la API:
+2025-01-14T15:18:50.554Z info: Mensaje enviado a customerService
+2025-01-14T15:28:27.602Z error: TypeError: Cannot destructure property 'body' of '(intermediate value)(intermediate value)(intermediate value)' as it is undefined.
+    at BotController.<anonymous> (/home/node/app/src/presentation/whatsapp/bot.controller.ts:83:19)
+    at Generator.next (<anonymous>)
+    at /home/node/app/src/presentation/whatsapp/bot.controller.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/node/app/src/presentation/whatsapp/bot.controller.ts:4:12)
+    at BotController.webhook (/home/node/app/src/presentation/whatsapp/bot.controller.ts:12:51)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/node/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/node/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+2025-01-14T16:01:26.141Z info: Mensaje enviado a la API:
+2025-01-14T16:01:26.141Z info: Mensaje enviado a customerService
+2025-01-14T17:00:14.507Z info: Mensaje enviado a la API:
+2025-01-14T17:00:14.507Z info: Mensaje enviado a customerService
+2025-01-14T17:03:21.651Z info: Mensaje enviado a la API:
+2025-01-14T17:03:21.651Z info: Mensaje enviado a customerService
+2025-01-14T17:12:29.737Z info: Datos de un documento enviados a la API
+2025-01-14T17:12:42.484Z info: Mensaje enviado a la API:
+2025-01-14T17:12:42.485Z info: Mensaje enviado a customerService
+2025-01-14T17:23:43.924Z error: TypeError: Cannot destructure property 'body' of '(intermediate value)(intermediate value)(intermediate value)' as it is undefined.
+    at BotController.<anonymous> (/home/node/app/src/presentation/whatsapp/bot.controller.ts:83:19)
+    at Generator.next (<anonymous>)
+    at /home/node/app/src/presentation/whatsapp/bot.controller.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/node/app/src/presentation/whatsapp/bot.controller.ts:4:12)
+    at BotController.webhook (/home/node/app/src/presentation/whatsapp/bot.controller.ts:12:51)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/node/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/node/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+2025-01-14T20:16:40.080Z error: TypeError: Cannot destructure property 'body' of '(intermediate value)(intermediate value)(intermediate value)' as it is undefined.
+    at BotController.<anonymous> (/home/node/app/src/presentation/whatsapp/bot.controller.ts:83:19)
+    at Generator.next (<anonymous>)
+    at /home/node/app/src/presentation/whatsapp/bot.controller.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/node/app/src/presentation/whatsapp/bot.controller.ts:4:12)
+    at BotController.webhook (/home/node/app/src/presentation/whatsapp/bot.controller.ts:12:51)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/node/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/node/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+2025-01-14T20:16:40.566Z error: TypeError: Cannot destructure property 'body' of '(intermediate value)(intermediate value)(intermediate value)' as it is undefined.
+    at BotController.<anonymous> (/home/node/app/src/presentation/whatsapp/bot.controller.ts:83:19)
+    at Generator.next (<anonymous>)
+    at /home/node/app/src/presentation/whatsapp/bot.controller.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/node/app/src/presentation/whatsapp/bot.controller.ts:4:12)
+    at BotController.webhook (/home/node/app/src/presentation/whatsapp/bot.controller.ts:12:51)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/node/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/node/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+2025-01-14T20:16:42.455Z error: TypeError: Cannot destructure property 'body' of '(intermediate value)(intermediate value)(intermediate value)' as it is undefined.
+    at BotController.<anonymous> (/home/node/app/src/presentation/whatsapp/bot.controller.ts:83:19)
+    at Generator.next (<anonymous>)
+    at /home/node/app/src/presentation/whatsapp/bot.controller.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/node/app/src/presentation/whatsapp/bot.controller.ts:4:12)
+    at BotController.webhook (/home/node/app/src/presentation/whatsapp/bot.controller.ts:12:51)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/node/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/node/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+2025-01-14T20:17:05.240Z error: TypeError: Cannot destructure property 'body' of '(intermediate value)(intermediate value)(intermediate value)' as it is undefined.
+    at BotController.<anonymous> (/home/node/app/src/presentation/whatsapp/bot.controller.ts:83:19)
+    at Generator.next (<anonymous>)
+    at /home/node/app/src/presentation/whatsapp/bot.controller.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/node/app/src/presentation/whatsapp/bot.controller.ts:4:12)
+    at BotController.webhook (/home/node/app/src/presentation/whatsapp/bot.controller.ts:12:51)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/node/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/node/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+2025-01-14T22:06:59.473Z info: Mensaje enviado a la API:
+2025-01-14T22:10:52.044Z info: Mensaje enviado a la API:
+2025-01-14T23:19:34.647Z info: Mensaje enviado a la API:
+2025-01-15T03:20:33.612Z error: TypeError: Cannot destructure property 'body' of '(intermediate value)(intermediate value)(intermediate value)' as it is undefined.
+    at BotController.<anonymous> (/home/node/app/src/presentation/whatsapp/bot.controller.ts:45:17)
+    at Generator.next (<anonymous>)
+    at /home/node/app/src/presentation/whatsapp/bot.controller.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/node/app/src/presentation/whatsapp/bot.controller.ts:4:12)
+    at BotController.webhook (/home/node/app/src/presentation/whatsapp/bot.controller.ts:12:51)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/node/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/node/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+2025-01-15T14:55:37.113Z error: TypeError: Cannot destructure property 'body' of '(intermediate value)(intermediate value)(intermediate value)' as it is undefined.
+    at BotController.<anonymous> (/home/node/app/src/presentation/whatsapp/bot.controller.ts:83:19)
+    at Generator.next (<anonymous>)
+    at /home/node/app/src/presentation/whatsapp/bot.controller.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/node/app/src/presentation/whatsapp/bot.controller.ts:4:12)
+    at BotController.webhook (/home/node/app/src/presentation/whatsapp/bot.controller.ts:12:51)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/node/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/node/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+2025-01-15T16:21:24.483Z info: Mensaje enviado a la API:
+2025-01-15T16:21:24.484Z info: Mensaje enviado a customerService
+2025-01-15T17:53:32.275Z info: Mensaje enviado a la API:
+2025-01-15T17:53:32.284Z info: Mensaje enviado a customerService
+2025-01-16T14:05:22.511Z info: Mensaje enviado a la API:
+2025-01-16T14:05:22.514Z info: Mensaje enviado a customerService
+2025-01-16T14:44:03.987Z info: Mensaje enviado a la API:
+2025-01-16T14:44:03.988Z info: Mensaje enviado a customerService
+2025-01-16T15:44:57.220Z info: Mensaje enviado a la API:
+2025-01-16T15:44:57.222Z info: Mensaje enviado a customerService
+2025-01-16T16:08:45.949Z info: Datos de una imagen enviados a la API
+2025-01-16T18:25:39.757Z info: Datos de una imagen enviados a la API
+2025-01-16T18:30:33.634Z info: Mensaje enviado a la API:
+2025-01-16T18:30:33.636Z info: Mensaje enviado a customerService
+2025-01-16T18:37:02.414Z info: Datos de una imagen enviados a la API
