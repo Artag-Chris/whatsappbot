@@ -11,7 +11,7 @@ export class BotServices {
   constructor() {}
   
   async onMessage(payload: IncomingWhatsappMessage): Promise<string> {
-  console.log(`Payload recibido: ${JSON.stringify(payload)}`);
+ // console.log(`Payload recibido: ${JSON.stringify(payload)}`);
  
     let mensaje = "hola mundo";
     const {changes} = payload.entry?.[0];
@@ -29,7 +29,7 @@ export class BotServices {
       console.error("Missing required data from payload");
       return mensaje;
     }
-   
+   console.log(` mensaje recivido de ${name} ${phone} : ${body}`);
     const outgoing=new WhatsappOutgoingMessage(name,phone,body,type,id,body,display_phone_number,phone_number_id);
     outgoing.checkType()
   
