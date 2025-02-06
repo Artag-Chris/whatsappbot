@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { BotServices } from "../services/bot.services";
 import { inWorkingHours } from "../../functions";
-import { WhatsappOutgoingMessage } from "../../config/classes";
+import { WhatsappOutgoingAudio, WhatsappOutgoingDocument, WhatsappOutgoingImage, WhatsappOutgoingMessage, WhatsappOutgoingVideo } from "../../config/classes";
 import logger from "../../config/adapters/winstonAdapter";
 export class BotController {
 
@@ -37,18 +37,80 @@ export class BotController {
       }
       const messageType = messages.type;
       if (!inWorkingHours()) {
-        const { changes } = payload.entry?.[0];
-        const { value } = changes?.[0];
-        const { metadata, contacts, messages } = value
-        const { name } = contacts?.[0].profile
-        const { id, type } = messages?.[0]
-        const { body } = messages?.[0].text
-        const { display_phone_number, phone_number_id } = metadata
-        const phone = payload.entry?.[0].changes?.[0].value?.messages?.[0].from;
-        const notWorkingHours = new WhatsappOutgoingMessage(name, phone, body, type, id, body, display_phone_number, phone_number_id);
-        notWorkingHours.inNotWorkingHours();
-        //mandara un un mensaje personalizado al usuario diciendo la hora de atencion y tambien guardara en la base de datos
-        return
+        try {
+          const { changes } = payload.entry?.[0];
+          const { value } = changes?.[0];
+          const { metadata, contacts, messages } = value;
+          const { display_phone_number, phone_number_id } = metadata;
+          const { name } = contacts?.[0]?.profile || { name: 'Unknown' };
+          const { id, type } = messages?.[0];
+          const phone = messages?.[0]?.from;
+          
+          // Default message for non-working hours
+          let message = 'El cliente envió un archivo fuera de horas laborales';
+      
+          // Extract message content based on type
+          switch (type) {
+            case 'text':
+              message = messages?.[0]?.text?.body || message;
+              const textMsg = new WhatsappOutgoingMessage(
+                name, phone, message, type, id, message,
+                display_phone_number, phone_number_id
+              );
+              await textMsg.inNotWorkingHours();
+              break;
+      
+            case 'image':
+              const imageMsg = new WhatsappOutgoingImage(
+                name, phone, display_phone_number,
+                message, type, id
+              );
+              // TODO: Add inNotWorkingHours method to WhatsappOutgoingImage
+              await imageMsg.sendToApi();
+              break;
+      
+            case 'audio':
+              const audioMsg = new WhatsappOutgoingAudio(
+                name, phone, display_phone_number, 
+                message, type, id
+              );
+              // TODO: Add inNotWorkingHours method to WhatsappOutgoingAudio
+              await audioMsg.sendToApi();
+              break;
+      
+            case 'video':
+              const videoMsg = new WhatsappOutgoingVideo(
+                name, phone, display_phone_number,
+                message, type, id
+              );
+              // TODO: Add inNotWorkingHours method to WhatsappOutgoingVideo
+              await videoMsg.sendToApi();
+              break;
+      
+            case 'document':
+              const docMsg = new WhatsappOutgoingDocument(
+                name, phone, display_phone_number,
+                message, type, id
+              );
+              // TODO: Add inNotWorkingHours method to WhatsappOutgoingDocument
+              await docMsg.sendToApi();
+              break;
+      
+            default:
+              logger.warn(`Unsupported message type received during non-working hours: ${type}`);
+              const defaultMsg = new WhatsappOutgoingMessage(
+                name, phone, message, type, id, message,
+                display_phone_number, phone_number_id
+              );
+              await defaultMsg.inNotWorkingHours();
+          }
+      
+          return;
+      
+        } catch (error) {
+          logger.error('Error processing message during non-working hours:', error);
+          return res.status(500).send('Error processing message during non-working hours');
+        }
       }
 
       switch (messageType) {
@@ -80,7 +142,7 @@ export class BotController {
           const { metadata, contacts, messages } = value
           const { name } = contacts?.[0].profile
           const { id, type } = messages?.[0]
-          const { body } = messages?.[0].text
+          const body = messages?.[0]?.text ? messages[0].text.body : 'El cliente envió un archivo fuera de horas laborales';
           const { display_phone_number, phone_number_id } = metadata
           const phone = payload.entry?.[0].changes?.[0].value?.messages?.[0].from;
           const firstTimeMessage = new WhatsappOutgoingMessage(name, phone, body, type, id, body, display_phone_number, phone_number_id);
