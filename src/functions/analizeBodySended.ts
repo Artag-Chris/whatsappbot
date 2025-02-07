@@ -7,7 +7,9 @@ export const findMenu = (message: string) => {
   for (const [menu, words] of Object.entries(keywords)) {
     if (words.some((keyword) => new RegExp(keyword, 'i').test(lowerCaseMessage))) {
       // Si se ha encontrado una coincidencia, envía la respuesta automática
-      const respuestaAutomatica = 'Será atendido en breve. Por favor, espere un momento.';
+      const respuestaAutomatica = `¡Gracias por tu paciencia! 😊
+*Tu mensaje está en línea y pronto uno de nuestros agentes estará encantado de ayudarte*. 🙌
+*Por favor, espera un momento* y estaremos contigo en breve. ⏳`;
       // Envía la respuesta automática
       // ...
       respuestaAutomaticaEnviada = true;

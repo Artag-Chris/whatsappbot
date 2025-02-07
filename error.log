@@ -1297,3 +1297,4 @@
     at next (/home/node/app/node_modules/express/lib/router/route.js:149:13)
     at Route.dispatch (/home/node/app/node_modules/express/lib/router/route.js:119:3)
     at Layer.handle [as handle_request] (/home/node/app/node_modules/express/lib/router/layer.js:95:5)
+2025-02-07T19:19:00.751Z error: El cliente envió un archivo fuera de horas laborales
