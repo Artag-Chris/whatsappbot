@@ -2208,3 +2208,27 @@
 2025-02-07T19:13:46.120Z info: Mensaje enviado a customerService
 2025-02-07T19:19:00.199Z info: Error al procesar el mensaje
 2025-02-07T19:19:00.751Z error: El cliente envió un archivo fuera de horas laborales
+2025-02-07T20:52:20.454Z info: Error al procesar el mensaje
+2025-02-07T20:52:20.457Z info: Mensaje enviado a customerService
+2025-02-07T21:29:12.507Z info: Datos de un documento enviados a la API
+2025-02-07T23:16:53.287Z info: Mensaje procesado exitosamente
+2025-02-08T15:04:57.370Z info: Mensaje procesado exitosamente
+2025-02-08T15:04:57.371Z info: Mensaje enviado a customerService
+2025-02-08T15:51:56.779Z info: Datos de un documento enviados a la API
+2025-02-08T16:22:46.095Z info: Error al procesar el mensaje
+2025-02-08T16:22:46.096Z info: Mensaje enviado a customerService
+2025-02-08T16:24:08.511Z info: Error al procesar el mensaje
+2025-02-08T16:24:08.512Z info: Mensaje enviado a customerService
+2025-02-08T16:47:56.091Z info: Error al procesar el mensaje
+2025-02-08T16:47:56.092Z info: Mensaje enviado a customerService
+2025-02-08T16:57:21.606Z info: Datos de una imagen enviados a la API
+2025-02-08T16:57:48.516Z info: Datos de un documento enviados a la API
+2025-02-08T16:57:54.042Z info: Mensaje procesado exitosamente
+2025-02-08T16:57:54.042Z info: Mensaje enviado a customerService
+2025-02-08T17:05:08.761Z info: Error al procesar el mensaje
+2025-02-08T17:05:21.601Z info: Error al procesar el mensaje
+2025-02-08T17:05:35.774Z info: Error al procesar el mensaje
+2025-02-08T17:05:41.756Z info: Mensaje procesado exitosamente
+2025-02-08T17:05:41.757Z info: Mensaje enviado a customerService
+2025-02-08T17:43:41.585Z info: Error al procesar el mensaje
+2025-02-08T17:43:41.585Z info: Mensaje enviado a customerService
